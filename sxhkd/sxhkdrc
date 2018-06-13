@@ -107,7 +107,11 @@ XF86MonBrightness{Up,Down}
 
 # Lock screen
 XF86ScreenSaver
-	~/.config/i3lock.sh
+	~/.config/scripts/i3lock.sh
+
+# Sleep
+@XF86Sleep
+	~/.config/scripts/sleep.sh
 
 # Screenshot
 @Print

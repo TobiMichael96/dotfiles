@@ -1,6 +1,5 @@
 #! /bin/sh
 
-#compton --config ~/.config/compton.conf &
 feh --bg-fill --randomize ~/.config/background/*
 
 bspc monitor LVDS1 -d 1 2 3 4 5 6 7 8
@@ -16,10 +15,6 @@ bspc config initial_polarity second_child
 
 bspc rule -a Chromium desktop='^1'
 bspc rule -a Geany desktop='^2'
-
 bspc rule -a Thunderbird desktop='^4'
-bspc rule -a Spotify desktop='^4'
-bspc rule -a Lxterminal desktop='^5'
 
-#~/.config/polybar/launch.sh
 ~/.config/scripts/battery.sh

@@ -6,6 +6,6 @@ brightness=$(~/.config/scripts/brightness.sh)
 volume=$(~/.config/scripts/volume.sh)
 wifi=$(~/.config/scripts/wifi.sh)
 email=$(python ~/.config/scripts/email.py)
-uptime=$(uptime | awk '{print $3, $4, $5}' | sed 's/,$//')
+uptime=$(~/.config/scripts/uptime.sh)
 
 notify-send "Information" "$datetime \nUptime $uptime \n$battery \n$brightness \n$volume \n$wifi \n$email"

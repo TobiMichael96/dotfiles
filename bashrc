@@ -7,9 +7,9 @@ if ! pgrep -u "$USER" ssh-agent > /dev/null; then
 fi
 if [[ "$SSH_AGENT_PID" == "" ]]; then
 	eval "$(<~/.ssh-agent-thing)"
-	#ssh-add ~/.ssh/raspi
+	ssh-add ~/.ssh/raspi
 	ssh-add ~/.ssh/gitlab
-	#ssh-add ~/.ssh/vmitsec
+	ssh-add ~/.ssh/vmitsec
 fi
 
 alias px='ps ax | grep '

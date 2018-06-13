@@ -20,7 +20,9 @@ try:
 	obj.select()
 	if len(obj.search(None, 'unseen')[1][0].split()) == 0:
 		print("")
+	elif len(obj.search(None, 'unseen')[1][0].split()) == 1:
+		print("1 new Mail")
 	else:
-		print(len(obj.search(None, 'unseen')[1][0].split()))
+		print(str(len(obj.search(None, 'unseen')[1][0].split())) + " new Mails")
 except imaplib.socket.gaierror:
 	print("")
