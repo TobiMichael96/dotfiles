@@ -5,7 +5,7 @@ feh --bg-fill --randomize ~/.config/background/*
 bspc monitor LVDS1 -d 1 2 3 4 5 6 7 8
 bspc monitor HDMI1 -d 9 10
 
-bspc config border_width         2
+bspc config border_width         0
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
@@ -17,4 +17,8 @@ bspc rule -a Chromium desktop='^1'
 bspc rule -a Geany desktop='^2'
 bspc rule -a Thunderbird desktop='^4'
 
+xrdb ~/.Xresources
+xbacklight -set 30
+pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo 50%
+pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo 1
 ~/.config/scripts/battery.sh

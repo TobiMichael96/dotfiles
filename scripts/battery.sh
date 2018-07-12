@@ -18,7 +18,7 @@ daemon() {
 	while true
 	do
 		getbat
-		if [ "20" -gt "$BATC" ] && [ "Discharging" = "$BATS" ]; then
+		if [ "25" -gt "$BATC" ] && [ "Discharging" = "$BATS" ]; then
 			notify-send -u critical "Battery very low!" "Battery at $BATC%!"
 		fi
 		sleep 180

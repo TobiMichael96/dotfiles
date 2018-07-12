@@ -4,7 +4,7 @@
 
 configuration {
 lines: 			5;
-font: 			"Roboto Medium 18";
+font: 			"Noto Sans 18";
 show-match: 		false;
 separator-style: 	"solid";
 hide-scrollbar: 	true;
