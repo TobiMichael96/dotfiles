@@ -1,1 +1,2 @@
-/home/tobias/.Xresources
+xterm*faceName: Roboto Mono
+xterm*faceSize: 10
