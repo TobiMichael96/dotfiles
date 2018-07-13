@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-TOKEN=$(lpass show ImgurToken --notes)
+TOKEN=$(cat ~/.imgurtoken)
 IMAGE=/tmp/screenshot.png
 
 upload_copy_url() {

@@ -1,2 +1,4 @@
 xterm*faceName: Roboto Mono
 xterm*faceSize: 10
+xterm*Background: #1f1f1f
+xterm*Foreground: #FFFFFF
