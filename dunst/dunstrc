@@ -4,8 +4,8 @@
 #                  
 
 [global]
-    font = Hack 12
-    allow_markup = no
+    font = Roboto 12
+    markup = no
     format = "<b>%s</b>\n%b"
     sort = yes
     indicate_hidden = yes
@@ -32,21 +32,12 @@
     dmenu = /usr/bin/dmenu -p dunst:
     browser = /usr/bin/chromium -new-tab
     icon_position = off
-    icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
-
-[frame]
-    width = 3
-    color = "#EEFFFF"
+   
+    frame_width = 3
+    frame_color = "#EEFFFF"
 
 [shortcuts]
-
     close = ctrl+space
-
-    close_all = ctrl+shift+space
-
-    history = ctrl+grave
-
-    context = ctrl+shift+period
 
 [urgency_low]
     background = "#212121"
