@@ -110,8 +110,8 @@ XF86ScreenSaver
 	~/.config/scripts/i3lock.sh
 
 # Sleep
-@XF86Sleep
-	~/.config/scripts/sleep.sh
+#@XF86Sleep
+#	~/.config/scripts/sleep.sh
 
 # Screenshot
 @Print
