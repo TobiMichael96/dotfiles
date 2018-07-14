@@ -1,8 +1,8 @@
 Setup
 ------------------
 * Notification `dunst`
-* Font `Hack`
-* Terminal Emulator `xfce4-terminal`
+* Font `Roboto Mono`
+* Terminal Emulator `xterm`
 * Window Manager `bspwm`
 
 Screenshot
