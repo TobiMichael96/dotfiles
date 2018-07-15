@@ -1,0 +1,13 @@
+[Unit]
+Description=Mount Webdav folder
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+User=tobias
+ExecStart=mount /home/tobias/Nextcloud
+ExecStop=umount /home/tobias/Nextcloud
+
+[Install]
+WantedBy=multi-user.target

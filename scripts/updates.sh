@@ -7,7 +7,7 @@ if response=$(ping -c 1 1.1.1.1 2> /dev/null); then
   if [ $updates -eq 0 ]; then
     echo ""
   else
-    echo "$updates"
+    echo "Updates: $updates"
   fi
 else
   echo ""
