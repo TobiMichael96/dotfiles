@@ -8,6 +8,7 @@ Type=forking
 User=tobias
 ExecStart=mount /home/tobias/Nextcloud
 ExecStop=umount /home/tobias/Nextcloud
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target

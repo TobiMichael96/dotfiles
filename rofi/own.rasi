@@ -3,9 +3,8 @@
 //----------------------
 
 configuration {
-lines: 			5;
-font: 			"Noto Sans 18";
-show-match: 		false;
+font: 			"Roboto Mono 18";
+show-match: 		true;
 separator-style: 	"solid";
 hide-scrollbar: 	true;
 }
@@ -56,7 +55,7 @@ background-color: @background;
 
 #mainbox {
 border:  0;
-padding: 150 300 150 300;
+padding: 170 200 170 200;
 }
 
 #message {
