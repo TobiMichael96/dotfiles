@@ -14,8 +14,9 @@ bspc config single_monocle       true
 bspc config initial_polarity second_child
 
 bspc rule -a Chromium desktop='^1'
-bspc rule -a keepassxc desktop='^5'
+bspc rule -a Gedit desktop='^2'
 bspc rule -a Thunderbird desktop='^4'
+bspc rule -a keepassxc desktop='^5'
 
 xrdb ~/.Xresources
 xbacklight -set 30

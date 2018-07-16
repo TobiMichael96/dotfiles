@@ -8,7 +8,11 @@ super + t
 
 # program launcher
 super + Return
-	rofi -modi window,drun -show drun -display-drun 'Programs: ' -display-window 'Workspace: '
+	rofi -modi drun -show drun -display-drun 'Programs: ' 
+
+# workspace switcher
+super + Tab
+	rofi -modi window -show window -display-window 'Workspace: '
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -51,9 +55,12 @@ super + shift + {Left,Right}
 	bspc desktop -f {prev,next}.local
 
 # go to next desktop
-super + Tab
+super + Up
 	bspc desktop -f next.local
 
+# go to previous desktop
+super + Down
+	bspc desktop -f prev.local
 
 #
 # preselect
