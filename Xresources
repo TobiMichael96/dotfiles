@@ -1,6 +1,7 @@
 xterm.termName: xterm-256color
 xterm.vt100.saveLines: 4096
 
+xterm.transparent: true
 xterm*faceName: Roboto Mono
 xterm*faceSize: 10
 xterm*Background: #1f1f1f

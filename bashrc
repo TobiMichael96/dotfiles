@@ -22,3 +22,5 @@ alias screenshot='sh ~/.config/scripts/screenshot-tool.sh'
 alias ls='ls --color=auto'
 
 PS1='[\u@\h \W]\$ '
+
+cat ~/.cache/wal/sequences
