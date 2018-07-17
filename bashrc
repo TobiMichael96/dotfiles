@@ -13,7 +13,7 @@ fi
 
 alias px='ps ax | grep '
 
-alias sshuni='sh ~/sshuni.sh'
+alias extern='sh ~/.config/scripts/mount_partition.sh'
 
 alias cdc='cd $HOME/.config'
 

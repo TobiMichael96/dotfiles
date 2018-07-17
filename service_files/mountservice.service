@@ -1,14 +1,15 @@
 [Unit]
 Description=Mount Webdav folder
-After=network-online.target
-Wants=network-online.target
+Wants=systemd-networkd.service
+After=systemd-networkd.service
 
 [Service]
-Type=forking
 User=tobias
+Type=oneshot
+RemainAfterExit=yes
+ExecStartPre=/bin/sleep 15
 ExecStart=mount /home/tobias/Nextcloud
 ExecStop=umount /home/tobias/Nextcloud
-Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
