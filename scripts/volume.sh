@@ -1,16 +1,11 @@
 #!/usr/bin/env bash
 
-volume=$(pactl list sinks | grep  'Volume' | head -n1 | awk '{print $5}')
-muted=$(amixer | grep "Mono: Playback" | head -n1 | awk '{print $6}' | tr -d '[]')
-
-if [ "$muted" = "off" ]; then
-  output="Volume: $volume MUTED"
-else
-  output="Volume: $volume"
-fi
+number=$(pactl list short sinks | grep "1b.0.analog-stereo" | sed -e 's,^\([0-9][0-9]*\)[^0-9].*,\1,')
+volume=$(pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $number + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,' )
+output="Volume: $volume%"
 
 notify() {
-	notify-send -u low "Volume" "$output"
+	notify-send -u low "Speaker Volume" "$output"
 }
 
 output() {
@@ -21,4 +16,3 @@ case $1 in
 	n) notify ;;
 	*) output ;;
 esac
-
