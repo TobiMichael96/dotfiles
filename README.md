@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Desktop setup
+=======
+Laptop setup
+>>>>>>> fc480aae96ca93477a230312dde9f1f8eabcba7f
 ------------------
 * Notification `dunst`
 * Font `Roboto Mono`
