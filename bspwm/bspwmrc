@@ -20,12 +20,15 @@ bspc rule -a Thunderbird desktop='4'
 bspc rule -a keepassxc desktop='5'
 bspc rule -a 'TeamSpeak 3' desktop='7'
 
-xrdb ~/.Xresources
 dunst &
+sxhkd &
 compton --config ~/.config/compton/compton.conf &
 ~/.config/scripts/pywal.sh
 keepassxc &
 numlockx &
+setxkbmap de
+xsetroot -cursor_name left_ptr
+xrdb ~/.Xresources
 #polybar top &
 
 # source the colors.
