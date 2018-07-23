@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 Desktop setup
-=======
-Laptop setup
->>>>>>> fc480aae96ca93477a230312dde9f1f8eabcba7f
 ------------------
 * Notification `dunst`
 * Font `Roboto Mono`
@@ -11,7 +7,7 @@ Laptop setup
 
 Screenshot
 ------------------
-![minimal](https://i.imgur.com/5TdkbS2.png)
+![minimal](https://i.imgur.com/ebZd89V.png)
 
 Wallpapers: `https://alpha.wallhaven.cc/wallpaper/634427` 
 			`https://alpha.wallhaven.cc/wallpaper/604638`
