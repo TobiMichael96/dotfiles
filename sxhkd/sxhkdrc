@@ -8,7 +8,7 @@ super + t
 
 # program launcher
 super + Return
-	rofi -modi drun -show drun -display-drun 'Programs: ' 
+	rofi -modi drun -show drun -display-drun 'Programs: '
 
 # workspace switcher
 super + Tab
@@ -44,7 +44,7 @@ super + {space, shift + space}
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+	bspc {desktop -f,node -d} {1-9,10}
 
 # focus other node
 super + {Left,Right}
@@ -109,11 +109,11 @@ XF86Audio{Play,Pause,Next,Prev}
 	playerctl {play-pause,pause,next,previous}
 
 # Backlight controls
-XF86MonBrightness{Up,Down}
-	xbacklight {-inc,-dec} 10 && ~/.config/scripts/brightness.sh n
+#XF86MonBrightness{Up,Down}
+#	xbacklight {-inc,-dec} 10 && ~/.config/scripts/brightness.sh n
 
 # Lock screen
-XF86ScreenSaver
+super + l
 	~/.config/scripts/i3lock.sh
 
 # Sleep
@@ -123,7 +123,7 @@ XF86ScreenSaver
 # Screenshot
 @Print
 	~/.config/scripts/screenshot-tool.sh s
-	
+
 super + @Print
 	~/.config/scripts/screenshot-tool.sh
 

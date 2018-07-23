@@ -2,8 +2,9 @@
 
 feh --bg-fill --randomize ~/.config/background/*
 
-bspc monitor LVDS1 -d 1 2 3 4 5 6 7 8
-bspc monitor HDMI1 -d 9 10
+bspc monitor HDMI-A-1 -d 1 2 3 4 5 6
+bspc monitor DVI-D-0 -d 7 8
+bspc monitor HDMI-A-0 -d 9 10
 
 bspc config border_width         0
 
@@ -13,22 +14,19 @@ bspc config gapless_monocle      true
 bspc config single_monocle       true
 bspc config initial_polarity second_child
 
-bspc rule -a Chromium desktop='^1'
-bspc rule -a Gedit desktop='^2'
-bspc rule -a TeamSpeak 3 desktop='^2'
-bspc rule -a Thunderbird desktop='^4'
-bspc rule -a keepassxc desktop='^5'
+bspc rule -a Chromium desktop='1'
+bspc rule -a Atom desktop='3'
+bspc rule -a Thunderbird desktop='4'
+bspc rule -a keepassxc desktop='5'
+bspc rule -a 'TeamSpeak 3' desktop='7'
 
 xrdb ~/.Xresources
-xbacklight -set 30
-pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo 50%
-pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo 1
-~/.config/scripts/battery.sh
 dunst &
-# compton --config ~/.config/compton/compton.conf &
+compton --config ~/.config/compton/compton.conf &
 ~/.config/scripts/pywal.sh
 keepassxc &
-
+numlockx &
+#polybar top &
 
 # source the colors.
 . "${HOME}/.cache/wal/colors.sh"
@@ -38,3 +36,7 @@ bspc config normal_border_color "$color1"
 bspc config active_border_color "$color2"
 bspc config focused_border_color "$color15"
 bspc config presel_border_color "$color1"
+
+bspc config pointer_follows_focus true
+bspc desktop -f 1
+bspc config pointer_follows_focus false

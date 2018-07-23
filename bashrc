@@ -13,8 +13,6 @@ fi
 
 alias px='ps ax | grep '
 
-alias extern='sh ~/.config/scripts/mount_partition.sh'
-
 alias cdc='cd $HOME/.config'
 
 alias screenshot='sh ~/.config/scripts/screenshot-tool.sh'

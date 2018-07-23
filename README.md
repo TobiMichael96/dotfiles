@@ -1,4 +1,4 @@
-Setup
+Desktop setup
 ------------------
 * Notification `dunst`
 * Font `Roboto Mono`
