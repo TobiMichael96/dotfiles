@@ -15,10 +15,3 @@ Wallpapers: `https://alpha.wallhaven.cc/wallpaper/634427`
 
 Older Setups
 ------------------
-![minimal](https://i.imgur.com/MWrYP57.png)
-
-![minimal](https://i.imgur.com/1a0AmYg.png)
-
-![minimal](https://i.imgur.com/aN5ZEYc.png)
-
-![minimal](https://i.imgur.com/UTlMsBQ.png)
