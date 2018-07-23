@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-TOKEN=$(cat ~/.imgurtoken)
+TOKEN=$(cat /home/tobias/Nextcloud/Windows\,\ Daten/Daten/.imgurtoken)
 IMAGE=/tmp/screenshot.png
 
 upload_copy_url() {

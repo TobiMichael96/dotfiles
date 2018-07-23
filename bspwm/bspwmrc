@@ -1,7 +1,5 @@
 #! /bin/sh
 
-feh --bg-fill --randomize ~/.config/background/*
-
 bspc monitor HDMI-A-1 -d 1 2 3 4 5 6
 bspc monitor DVI-D-0 -d 7 8
 bspc monitor HDMI-A-0 -d 9 10
@@ -10,7 +8,7 @@ bspc config border_width         0
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+bspc config gapless_monocle      false
 bspc config single_monocle       true
 bspc config initial_polarity second_child
 
@@ -20,16 +18,15 @@ bspc rule -a Thunderbird desktop='4'
 bspc rule -a keepassxc desktop='5'
 bspc rule -a 'TeamSpeak 3' desktop='7'
 
+/home/tobias/.screenlayout/checkscreens.sh autostart
 dunst &
 sxhkd &
 compton --config ~/.config/compton/compton.conf &
-~/.config/scripts/pywal.sh
 keepassxc &
 numlockx &
 setxkbmap de
 xsetroot -cursor_name left_ptr
 xrdb ~/.Xresources
-#polybar top &
 
 # source the colors.
 . "${HOME}/.cache/wal/colors.sh"
