@@ -1,7 +1,7 @@
-#  _         _____ 
-# | \| ||\ |(_  |  
-# |_/|_|| \|__) |  
-#                  
+#  _         _____
+# | \| ||\ |(_  |
+# |_/|_|| \|__) |
+#
 
 [global]
     font = Roboto 12
@@ -32,7 +32,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
     browser = /usr/bin/chromium -new-tab
     icon_position = off
-   
+
     frame_width = 3
     frame_color = "#EEFFFF"
 
