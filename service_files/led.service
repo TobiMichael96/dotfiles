@@ -4,6 +4,7 @@ After=network-online.target
 
 [Service]
 Type=oneshot
+user=tobias
 ExecStart=/bin/bash /home/tobias/.config/scripts/led.sh 1
 RemainAfterExit=yes
 ExecStop=/bin/bash /home/tobias/.config/scripts/led.sh

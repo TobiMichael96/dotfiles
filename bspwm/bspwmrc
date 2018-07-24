@@ -19,15 +19,16 @@ bspc rule -a keepassxc desktop='5'
 bspc rule -a Steam desktop='6'
 bspc rule -a 'TeamSpeak 3' desktop='7'
 
-/home/tobias/.screenlayout/checkscreens.sh autostart
+sleep 2
+
+sh /home/tobias/.screenlayout/checkscreens.sh 1
 dunst &
-sxhkd &
 compton --config ~/.config/compton/compton.conf &
 keepassxc &
 numlockx &
 setxkbmap de
-xsetroot -cursor_name left_ptr
-xrdb ~/.Xresources
+xsetroot -cursor_name left_ptr &
+xrdb merge .Xresources &
 
 # source the colors.
 . "${HOME}/.cache/wal/colors.sh"

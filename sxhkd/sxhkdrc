@@ -103,7 +103,7 @@ super + p
 # Volume controls
 #
 XF86Audio{Raise,Lower}Volume
-	pactl set-sink-volume alsa_output.usb-Logitech_Logitech_Wireless_Headset_000D44E2CB3A-00.analog-stereo {+,-}10%
+	pactl set-sink-volume alsa_output.usb-Logitech_Logitech_Wireless_Headset_000D44E2CB3A-00.analog-stereo {+,-}5%
 
 XF86AudioMute
 	pactl set-sink-mute alsa_output.usb-Logitech_Logitech_Wireless_Headset_000D44E2CB3A-00.analog-stereo toggle

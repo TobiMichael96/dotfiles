@@ -1,7 +1,7 @@
 [Unit]
 Description=Mount Webdav folder
-Wants=systemd-networkd.service
-After=systemd-networkd.service
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 User=tobias

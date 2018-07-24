@@ -46,7 +46,7 @@ module-margin-left = 2
 module-margin-right = 2
 font-0 = "Roboto:pixelsize=14;2"
 font-1 = "FontAwesome:pixelsize=13;2"
-modules-left = bspwm
+modules-left = bspwm tv
 modules-center = date
 modules-right = music pulseaudio time
 ;override-redirect = true
@@ -179,7 +179,7 @@ use-ui-max = true
 ;   <ramp-volume>
 ;   <bar-volume>
 format-volume = <label-volume>
-format-volume-prefix = " "
+format-volume-prefix = "  "
 format-volume-prefix-foreground = ${colors.foreground-alt}
 
 format-muted = <label-muted>
@@ -215,6 +215,16 @@ format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
 exec = playerctl metadata xesam:title; if [[ "$(playerctl status)" = "Playing" ]]; then echo -n "    "; else echo -n "    "; fi; playerctl metadata xesam:artist;
 exec-if = [[ "$(playerctl status)" = "Playing" || "$(playerctl status)" = "Paused" ]] && echo "0"
+
+click-left = playerctl next
+click-right = playerctl play-pause next
+interval = 1
+format = <label>
+
+[module/tv]
+type = custom/script
+format-foreground = ${colors.foreground-alt}
+exec = used=$(xrandr -q | grep "HDMI-A-0"); used=${used:19:4}; if [[ $used =~ ^[0-9]+$ ]]; then echo -n ""; fi;
 
 click-left = playerctl next
 click-right = playerctl play-pause next
