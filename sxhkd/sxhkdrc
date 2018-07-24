@@ -35,7 +35,7 @@ super + shift + q
 	bspc node -c
 
 # alternate between the tiled and monocle layout
-super + m
+super + o
 	bspc desktop -l next
 
 # set window fullscreen
@@ -47,8 +47,8 @@ super + {space, shift + space}
 	bspc node -t {floating,tiled}
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} {1-9,10}
+super + {_,shift + }{1-9,0,m}
+	bspc {desktop -f,node -d} {1-9,10,11}
 
 # focus other node
 super + {Left,Right}
@@ -118,7 +118,7 @@ XF86Audio{Play,Pause,Next,Prev}
 
 # Lock screen
 super + l
-	~/.config/scripts/i3lock.sh
+	~/.config/scripts/physlock.sh
 
 # Sleep
 #@XF86Sleep

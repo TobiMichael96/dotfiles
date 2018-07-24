@@ -1,8 +1,8 @@
 #! /bin/sh
 
 bspc monitor HDMI-A-1 -d 1 2 3 4 5 6
-bspc monitor DVI-D-0 -d 7 8
-bspc monitor HDMI-A-0 -d 9 10
+bspc monitor DVI-D-0 -d 7 8 9 10
+bspc monitor HDMI-A-0 -d 11
 
 bspc config border_width         0
 
@@ -14,10 +14,11 @@ bspc config initial_polarity second_child
 
 bspc rule -a Chromium desktop='1'
 bspc rule -a Atom desktop='3'
-bspc rule -a Thunderbird desktop='4'
+bspc rule -a Spotify desktop='4'
 bspc rule -a keepassxc desktop='5'
 bspc rule -a Steam desktop='6'
 bspc rule -a 'TeamSpeak 3' desktop='7'
+bspc rule -a Thunderbird desktop='8'
 
 sleep 2
 
