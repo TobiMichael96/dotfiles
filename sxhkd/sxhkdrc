@@ -8,7 +8,7 @@ super + t
 
 # program launcher
 super + Return
-	rofi -modi drun -show drun -display-drun 'Programs: ' 
+	rofi -modi drun -show drun -display-drun 'Programs: '
 
 # workspace switcher
 super + Tab
@@ -21,6 +21,10 @@ super + Escape
 #
 # bspwm hotkeys
 #
+
+# reload bswpm normally
+super + shift + r
+  ~/.config/bspwm/bspwmrc
 
 # quit bspwm normally
 super + shift + e
@@ -123,7 +127,7 @@ XF86ScreenSaver
 # Screenshot
 @Print
 	~/.config/scripts/screenshot-tool.sh s
-	
+
 super + @Print
 	~/.config/scripts/screenshot-tool.sh
 
