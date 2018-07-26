@@ -1,5 +1,2 @@
-setxkbmap de
-xsetroot -cursor_name left_ptr
 sxhkd &
 exec bspwm
-~/.screenlayout/withTV.sh
