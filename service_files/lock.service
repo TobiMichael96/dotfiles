@@ -2,13 +2,13 @@
 
 [Unit]
 Description=Lock the screen on resume from suspend
-Before=sleep.target
+After=sleep.target
 
 [Service]
 User=tobias
 Type=forking
 Environment=DISPLAY=:0
-ExecStart=/bin/bash /home/tobias/.config/scripts/i3lock.sh
+ExecStart=/bin/bash /home/tobias/.config/scripts/physlock.sh
 
 [Install]
 WantedBy=sleep.target
