@@ -13,19 +13,16 @@ bspc config single_monocle       true
 bspc config initial_polarity second_child
 
 bspc rule -a Chromium desktop='1'
-bspc rule -a Atom desktop='3'
-bspc rule -a Spotify desktop='4'
-bspc rule -a keepassxc desktop='5'
+bspc rule -a keepassxc desktop='4'
+bspc rule -a Spotify desktop='5'
 bspc rule -a Steam desktop='6'
 bspc rule -a 'TeamSpeak 3' desktop='7'
 bspc rule -a Thunderbird desktop='8'
+bspc rule -a Atom desktop='9'
 
-sleep 2
-
-sh /home/tobias/.screenlayout/checkscreens.sh 1
+sh /home/tobias/.screenlayout/checkscreens.sh 1 &
 dunst &
 compton --config ~/.config/compton/compton.conf &
-keepassxc &
 numlockx &
 setxkbmap de
 xsetroot -cursor_name left_ptr &
