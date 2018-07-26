@@ -118,7 +118,7 @@ XF86MonBrightness{Up,Down}
 
 # Lock screen
 XF86ScreenSaver
-	~/.config/scripts/physlock..sh
+	~/.config/scripts/physlock.sh
 
 # Sleep
 #@XF86Sleep
