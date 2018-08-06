@@ -27,6 +27,7 @@ numlockx &
 setxkbmap de
 xsetroot -cursor_name left_ptr &
 xrdb merge .Xresources &
+sh /home/tobias/.config/scripts/physlock.sh &
 
 # source the colors.
 . "${HOME}/.cache/wal/colors.sh"
