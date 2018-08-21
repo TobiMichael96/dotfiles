@@ -3,14 +3,14 @@ used=$(xrandr -q | grep "HDMI-A-0")
 used=${used:19:4}
 
 if [ $1 -eq "1" ]; then
-  sleep 2
+  sleep 3
   sh ~/.screenlayout/withoutTV.sh
   bspc monitor HDMI-A-1 -d 1 2 3 4 5 6
   bspc monitor DVI-D-0 -d 7 8 9 10
   feh --bg-fill --no-xinerama --randomize ~/.config/background/*
   sh ~/.config/scripts/pywal.sh &
   sh ~/.config/polybar/launch.sh &
-
+  sh /home/tobias/.config/scripts/physlock.sh &
   # other programms to autostart
   sleep 5
   keepassxc &
