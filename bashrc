@@ -23,6 +23,8 @@ alias ls='ls --color=auto'
 
 alias httpd='hostname -i && python3 -m http.server 8001'
 
+alias note='sh ~/.config/scripts/notes.sh'
+
 PS1='[\u@\h \W]\$ '
 
 cat ~/.cache/wal/sequences
