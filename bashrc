@@ -19,6 +19,8 @@ alias screenshot='sh ~/.config/scripts/screenshot-tool.sh'
 
 alias ls='ls --color=auto'
 
+alias httpd='python3 -m http.server 8001'
+
 PS1='[\u@\h \W]\$ '
 
 cat ~/.cache/wal/sequences
