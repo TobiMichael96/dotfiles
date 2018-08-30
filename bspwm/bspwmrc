@@ -1,7 +1,4 @@
 #! /bin/sh
-
-feh --bg-fill --randomize ~/.config/background/*
-
 bspc monitor LVDS1 -d 1 2 3 4 5 6 7 8
 bspc monitor HDMI1 -d 9 10
 
@@ -13,24 +10,22 @@ bspc config gapless_monocle      true
 bspc config single_monocle       true
 bspc config initial_polarity second_child
 
-bspc rule -a Chromium desktop='^1'
-bspc rule -a Atom desktop='^2'
-bspc rule -a TeamSpeak 3 desktop='^2'
-bspc rule -a keepassxc desktop='^4'
-bspc rule -a Thunderbird desktop='^5'
+bspc rule -a Firefox desktop='1'
+bspc rule -a Atom desktop='2'
+bspc rule -a TeamSpeak 3 desktop='2'
+bspc rule -a keepassxc desktop='4'
+bspc rule -a Thunderbird desktop='5'
+bspc rule -a "Mullvad VPN" desktop='6'
 
-/home/tobias/.config/scripts/physlock.sh &
+sh /home/tobias/.screenlayout/checkscreens.sh 1 &
+dunst &
 setxkbmap de
 xsetroot -cursor_name left_ptr
 xrdb merge ~/.Xresources &
 xbacklight -set 30
 pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo 50%
 pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo 1
-~/.config/scripts/battery.sh
-dunst &
 # compton --config ~/.config/compton/compton.conf &
-~/.config/scripts/pywal.sh
-keepassxc &
 
 
 # source the colors.

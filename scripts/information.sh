@@ -6,7 +6,7 @@ brightness=$(~/.config/scripts/brightness.sh)
 volume=$(~/.config/scripts/volume.sh)
 wifi=$(~/.config/scripts/wifi.sh)
 email=$(python ~/.config/scripts/email.py)
-updates=$(~/.config/scripts/updates.sh)
+#workspace=$(~/.config/scripts/workspace.sh)
 #temp=$(~/.config/scripts/temp.sh)
 
-notify-send "Information" "$datetime \n$battery \n$brightness \n$volume \n$wifi \n$updates"
+notify-send "Information" "$datetime \n$battery \n$brightness \n$volume \n$wifi"

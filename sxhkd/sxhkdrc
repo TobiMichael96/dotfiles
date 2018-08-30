@@ -47,8 +47,8 @@ super + {space, shift + space}
 	bspc node -t {floating,tiled}
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+super + {_,shift + } {1-9,0}
+	bspc {desktop -f,node -d} {1-9,10}
 
 # focus other node
 super + {Left,Right}
