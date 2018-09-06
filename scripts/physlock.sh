@@ -1,3 +1,3 @@
 #!/bin/bash
 
-physlock -d -p "Laptop locked. Enter password to unlock!"
+physlock -d -m -p "Laptop locked. Enter password to unlock!"

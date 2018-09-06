@@ -25,6 +25,6 @@ alias httpd='hostname -i && python3 -m http.server 8001'
 
 alias note='sh ~/.config/scripts/notes.sh'
 
-PS1='[\u@\h \W]\$ '
+PS1='[\u@\h > \W] [\A]\$ '
 
 cat ~/.cache/wal/sequences
