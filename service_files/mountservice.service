@@ -8,7 +8,7 @@ User=tobias
 Type=simple
 RemainAfterExit=yes
 Restart=on-failure
-ExecStartPre=/bin/sleep 15
+ExecStartPre=/bin/sleep 10
 ExecStart=mount /home/tobias/Nextcloud
 ExecStop=umount /home/tobias/Nextcloud
 

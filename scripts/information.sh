@@ -5,7 +5,7 @@ battery=$(~/.config/scripts/battery.sh g)
 brightness=$(~/.config/scripts/brightness.sh)
 volume=$(~/.config/scripts/volume.sh)
 wifi=$(~/.config/scripts/wifi.sh)
-email=$(python ~/.config/scripts/email.py)
+#email=$(python ~/.config/scripts/email.py)
 #workspace=$(~/.config/scripts/workspace.sh)
 #temp=$(~/.config/scripts/temp.sh)
 
