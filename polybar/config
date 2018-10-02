@@ -26,7 +26,8 @@ margin-bottom = 3
 
 [bar/main]
 monitor = LVDS1
-width = 100%
+width = 99%
+bottom = true
 height = 25
 offset-x = 0.3%
 offset-y = 0.5%
@@ -44,9 +45,10 @@ padding-top = 2
 padding-bottom = 2
 module-margin-left = 2
 module-margin-right = 2
+enable-ipc = true
 font-0 = "Roboto:pixelsize=14;2"
 font-1 = "FontAwesome:pixelsize=13;2"
-modules-left = bspwm tv
+modules-left = bspwm tv wifi
 modules-center = date
 modules-right = music pulseaudio time
 ;override-redirect = true
@@ -123,6 +125,15 @@ label-volume-foreground = ${colors.foreground}
 
 label-muted = muted
 label-muted-foreground = ${colors.urgent}
+
+[module/wifi]
+type = internal/network
+interface = wlp3s0
+format-connected =   <label-connected>
+label-connected = %essid%
+label-connected-foreground = ${colors.foreground}
+format-disconnected = <label-disconnected>
+label-disconnected-foreground = ${colors.urgent}
 
 [module/time]
 type = internal/date

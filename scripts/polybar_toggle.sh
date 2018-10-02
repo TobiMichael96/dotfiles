@@ -3,6 +3,7 @@
 hidden=false
 height=$(xdpyinfo | awk -F '[ x]+' '/dimensions:/{print $4}')
 barheight=$(cat .config/polybar/config | grep height | head -n1 | sed 's/height.=\ *//')
+let barheight=$barheight+8
 let height=$height-$barheight
 
 daemon() {
@@ -28,7 +29,7 @@ toggle() {
 		polybar-msg cmd show
 		bspc config bottom_padding $barheight
 		hidden=false
-	else 
+	else
 		polybar-msg cmd hide
 		bspc config bottom_padding 0
 		hidden=true
