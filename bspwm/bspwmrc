@@ -15,7 +15,6 @@ bspc rule -a Atom desktop='2'
 bspc rule -a TeamSpeak 3 desktop='2'
 bspc rule -a keepassxc desktop='4'
 bspc rule -a Thunderbird desktop='5'
-bspc rule -a "Mullvad VPN" desktop='6'
 bspc rule -a Steam desktop='6'
 
 sh /home/tobias/.screenlayout/checkscreens.sh 1 &

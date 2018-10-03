@@ -26,11 +26,11 @@ margin-bottom = 3
 
 [bar/main]
 monitor = LVDS1
-width = 99%
+width = 100%
 bottom = true
 height = 25
-offset-x = 0.3%
-offset-y = 0.5%
+offset-x = 0%
+offset-y = 0%
 radius = 5.0
 fixed-center = true
 background = ${colors.background}

@@ -7,7 +7,7 @@ upload_copy_url() {
   if response=$(ping -c 1 1.1.1.1 2> /dev/null); then
     link=$(curl --compressed -fsSL -F "image=@\"${IMAGE}\"" -H "Authorization: Bearer ${TOKEN}" https://api.imgur.com/3/image | sed -E 's/.*"link":"([^"]+)".*/\1/' | sed "s|\\\\/|/|g")
     echo $link | xclip -selection c
-    notify-send "Screenshot" "Screenshot saved to clipboard! $link"
+    notify-send "Screenshot" "Link saved to clipboard! $link"
   else
     echo "No connection avaliable... Screenshot saved offline."
     date=$(date +"%d_%m_%Y")
