@@ -3,12 +3,30 @@
 TOKEN=$(cat ~/.imgurtoken)
 IMAGE=/tmp/screenshot.png
 
+counter=0
+
+wait_for_connection() {
+    if response=$(ping -c 1 1.1.1.1 2> /dev/null); then
+	upload_copy_url
+    else
+	if (( $counter < 20 )); then
+	    sleep 30
+            notify-send "Screenshot" "No connection avaliable, retry in 15 seconds!"
+	    counter=$((counter++))
+	    wait_for_connection
+	else
+	    save_local
+	fi
+    fi
+}
+
 upload_copy_url() {
-  if response=$(ping -c 1 1.1.1.1 2> /dev/null); then
     link=$(curl --compressed -fsSL -F "image=@\"${IMAGE}\"" -H "Authorization: Bearer ${TOKEN}" https://api.imgur.com/3/image | sed -E 's/.*"link":"([^"]+)".*/\1/' | sed "s|\\\\/|/|g")
     echo $link | xclip -selection c
     notify-send "Screenshot" "Link saved to clipboard! $link"
-  else
+}
+
+save_local() {
     echo "No connection avaliable... Screenshot saved offline."
     date=$(date +"%d_%m_%Y")
     name=Screenshot-$date
@@ -24,13 +42,12 @@ upload_copy_url() {
 
     mv $IMAGE ~/Pictures/$name
     notify-send "Screenshot" "Screenshot saved offline... $name"
-  fi
 }
 
 case "$1" in
   s)
   scrot -s $IMAGE
-  upload_copy_url
+  wait_for_connection
   ;;
   help)
   echo "Usage: $0 [ (full screenshot)|d (full screenshot with delay)|s (partial screenshot)|help]"
@@ -42,7 +59,7 @@ case "$1" in
   ;;
   *)
   scrot $IMAGE
-  upload_copy_url
+  wait_for_connection
   ;;
 esac
 
