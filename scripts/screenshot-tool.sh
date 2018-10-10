@@ -11,7 +11,7 @@ wait_for_connection() {
     else
 	if (( $counter < 20 )); then
 	    sleep 30
-            notify-send "Screenshot" "No connection avaliable, retry in 15 seconds!"
+            notify-send "Screenshot" "No connection avaliable, retry in 30 seconds!"
 	    counter=$((counter++))
 	    wait_for_connection
 	else
