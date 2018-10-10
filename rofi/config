@@ -1,0 +1,8 @@
+rofi.fullscreen: true
+
+
+rofi.columns: 2
+rofi.drun-icon-theme: "Papirus"
+rofi.show-icons: true
+
+rofi.theme: ~/.config/rofi/own.rasi
