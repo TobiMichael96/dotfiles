@@ -50,7 +50,7 @@ font-0 = "Roboto:pixelsize=14;2"
 font-1 = "FontAwesome:pixelsize=13;2"
 modules-left = bspwm tv wifi
 modules-center = date
-modules-right = music pulseaudio time
+modules-right = music battery backlight pulseaudio time
 ;override-redirect = true
 wm-restack = bspwm
 scroll-up = bspwm-desknext
@@ -97,6 +97,46 @@ ws-icon-6 = 7;7
 ws-icon-7 = 8;8
 ws-icon-8 = 9;9
 ws-icon-9 = 10;10
+
+[module/backlight]
+type = internal/xbacklight
+
+format = <label>
+format-prefix = "   "
+format-prefix-foreground = ${colors.foreground-alt}
+
+; Available tokens:
+;   %percentage% (default)
+label = %percentage%%
+
+; Create scroll handlers used to set the backlight value
+; Default: true
+enable-scroll = false
+
+[module/battery]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+full-at = 96
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = ADP1
+format-charging = <label-charging>
+format-charging-prefix = "   "
+format-charging-prefix-foreground = ${colors.foreground-alt}
+
+format-discharging = <label-discharging>
+format-discharging-prefix = "   "
+format-discharging-prefix-foreground = ${colors.foreground-alt}
+
+label-charging = %percentage%%
+label-discharging = %percentage%%
+
+; Default: 5
+poll-interval = 5
+
 
 [module/pulseaudio]
 type = internal/pulseaudio

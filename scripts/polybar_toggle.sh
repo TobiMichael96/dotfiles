@@ -7,12 +7,13 @@ let height=$height-$barheight
 
 daemon() {
 	while true; do
-		mouse=$(xdotool getmouselocation --shell | grep Y | sed 's/.=*//')
-		if [ "$mouse" -gt "$height" ] && [ "$hidden" = true ]; then
+		mousey=$(xdotool getmouselocation --shell | grep Y | sed 's/.=*//')
+		mousex=$(xdotool getmouselocation --shell | grep X | sed 's/.=*//')
+		if ([ "$mousey" -gt "$height" ] && [ "$hidden" = true ]) && [ $mousex -eq 0 ] || [ $mousex -eq 1365 ]; then
 			polybar-msg cmd show
 			bspc config bottom_padding $barheight
 			hidden=false
-		elif [ "$mouse" -lt "$height" ] && [ "$hidden" = false ]; then
+		elif [ "$mousey" -lt "$height" ] && [ "$hidden" = false ]; then
 			sleep 2
 			polybar-msg cmd hide
 			bspc config bottom_padding 0

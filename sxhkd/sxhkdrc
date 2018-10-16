@@ -133,4 +133,4 @@ super + @Print
 
 # Show information
 super + i
-	~/.config/scripts/information.sh
+	~/.config/scripts/polybar_toggle.sh t
