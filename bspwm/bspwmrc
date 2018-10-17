@@ -14,20 +14,20 @@ bspc rule -a keepassxc desktop='4'
 bspc rule -a Thunderbird desktop='5'
 bspc rule -a Jitsi desktop='10'
 
+~/.config/scripts/physlock.sh &
 wmname LG3D
 sxhkd &
 dunst &
 setxkbmap de
 xsetroot -cursor_name left_ptr
 xrdb merge ~/.Xresources &
-feh --bg-fill --no-xinerama --randomize ~/.config/background/*   
 ~/.config/scripts/pywal.sh &   
 ~/.config/polybar/launch.sh &
-# compton --config ~/.config/compton/compton.conf &
 sleep 3
 keepassxc &
 thunderbird &
 jitsi &
+firefox &
 
 # source the colors.
 . "${HOME}/.cache/wal/colors.sh"
