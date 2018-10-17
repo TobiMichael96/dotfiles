@@ -3,15 +3,15 @@
 TOKEN=$(cat ~/.imgurtoken)
 IMAGE=/tmp/screenshot.png
 
-counter=0
+COUNTER=0
 
 wait_for_connection() {
     if response=$(ping -c 1 1.1.1.1 2> /dev/null); then
 	upload_copy_url
     else
-	if (( $counter < 20 )); then
+	if (( $counter < 5 )); then
+	    notify-send "Screenshot" "No connection avaliable, retry in 30 seconds!"
 	    sleep 30
-            notify-send "Screenshot" "No connection avaliable, retry in 30 seconds!"
 	    counter=$((counter++))
 	    wait_for_connection
 	else
