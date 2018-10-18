@@ -6,18 +6,16 @@ IMAGE=/tmp/screenshot.png
 COUNTER=0
 
 wait_for_connection() {
-    if response=$(ping -c 1 1.1.1.1 2> /dev/null); then
-	upload_copy_url
-    else
-	if (( $COUNTER -lt 5 )); then
-	    notify-send "Screenshot" "No connection avaliable, retry in 30 seconds!"
+    for i in {1..5}
+    do
+    	if response=$(ping -c 1 1.1.1.1 2> /dev/null); then
+	    upload_copy_url
+    	else
+	    notify-send "Screenshot (try: $i)" "No connection avaliable, retry in 30 seconds!"
 	    sleep 30
-	    COUNTER=$((COUNTER + 1))
-	    wait_for_connection
-	else
-	    save_local
-	fi
-    fi
+    	fi
+    done
+    save_local
 }
 
 upload_copy_url() {
