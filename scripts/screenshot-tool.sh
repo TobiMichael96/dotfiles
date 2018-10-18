@@ -9,10 +9,10 @@ wait_for_connection() {
     if response=$(ping -c 1 1.1.1.1 2> /dev/null); then
 	upload_copy_url
     else
-	if (( $counter < 5 )); then
+	if (( $COUNTER -lt 5 )); then
 	    notify-send "Screenshot" "No connection avaliable, retry in 30 seconds!"
 	    sleep 30
-	    counter=$((counter++))
+	    COUNTER=$((COUNTER + 1))
 	    wait_for_connection
 	else
 	    save_local
