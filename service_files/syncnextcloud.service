@@ -1,0 +1,14 @@
+[Unit]
+Description=Sync nextcloud folder
+BindTo=wpa_supplicant@wlp3s0.service
+After=wpa_supplicant@wlp3s0.service
+
+[Service]
+User=tobias
+Type=oneshot
+ExecStartPre=/bin/sleep 10
+ExecStart=/bin/bash $HOME/.config/scripts/nextcloud_sync.sh
+
+[Install]
+WantedBy=multi-user.target
+
