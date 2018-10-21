@@ -28,7 +28,7 @@ margin-bottom = 0
 monitor = LVDS1
 width = 100%
 bottom = true
-height = 28
+height = 24
 offset-x = 0%
 offset-y = 0%
 radius = 5.0
@@ -46,8 +46,8 @@ padding-bottom = 2
 module-margin-left = 2
 module-margin-right = 2
 enable-ipc = true
-font-0 = "Roboto:pixelsize=14;2"
-font-1 = "FontAwesome:pixelsize=13;2"
+font-0 = "Roboto:pixelsize=14;3"
+font-1 = "FontAwesome:pixelsize=13;3"
 modules-left = bspwm tv wifi
 modules-center = date
 modules-right = music battery backlight pulseaudio time
@@ -117,12 +117,16 @@ enable-scroll = false
 type = internal/battery
 
 ; This is useful in case the battery never reports 100% charge
-full-at = 96
+full-at = 95
 
 ; Use the following command to list batteries and adapters:
 ; $ ls -1 /sys/class/power_supply/
 battery = BAT0
 adapter = ADP1
+
+format-full = <label-full>
+format-full-prefix = "   "
+
 format-charging = <label-charging>
 format-charging-prefix = "   "
 format-charging-prefix-foreground = ${colors.foreground-alt}

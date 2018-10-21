@@ -6,15 +6,20 @@ barheight=$(cat .config/polybar/config | grep height | head -n1 | sed 's/height.
 let height=$height-$barheight
 
 daemon() {
+	if [ pgrep -f polybar_toggle ]; then
+		pkill -f polybar_toggle
+		while pgrep -x polybar_toggle >/dev/null; do sleep 1; done
+	fi
+
 	while true; do
 		mousey=$(xdotool getmouselocation --shell | grep Y | sed 's/.=*//')
 		mousex=$(xdotool getmouselocation --shell | grep X | sed 's/.=*//')
-		if ([ "$mousey" -gt "$height" ] && [ "$hidden" = true ]) && [ $mousex -eq 0 ] || [ $mousex -eq 1365 ]; then
+		if ([ "$mousey" -gt "$height" ] && [ "$hidden" = true ]) && ([ $mousex -eq 0 ] || [ $mousex -eq 1365 ]); then
 			polybar-msg cmd show
 			bspc config bottom_padding $barheight
 			hidden=false
 		elif [ "$mousey" -lt "$height" ] && [ "$hidden" = false ]; then
-			sleep 2
+			sleep 4
 			polybar-msg cmd hide
 			bspc config bottom_padding 0
 			hidden=true

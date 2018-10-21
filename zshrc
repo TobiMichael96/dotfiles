@@ -11,6 +11,10 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
 	ssh-add ~/.ssh/gitlab &>/dev/null
 fi
 
+autoload -Uz compinit promptinit
+compinit
+promptinit
+
 alias px='ps ax | grep '
 alias cdc='cd $HOME/.config'
 alias screenshot='sh ~/.config/scripts/screenshot-tool.sh'
