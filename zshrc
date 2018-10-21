@@ -22,4 +22,6 @@ alias webserver='ssh tobiasmichael.de -p 2222'
 
 (cat ~/.cache/wal/sequences &)
 
-source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+powerline-daemon -q
+. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+

@@ -11,7 +11,6 @@ bspc config single_monocle       true
 bspc config initial_polarity second_child
 
 bspc rule -a Firefox desktop='1'
-bspc rule -a Atom desktop='2'
 bspc rule -a TeamSpeak 3 desktop='2'
 bspc rule -a keepassxc desktop='5'
 bspc rule -a Thunderbird desktop='5'
