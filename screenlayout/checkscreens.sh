@@ -4,7 +4,6 @@ if [ $1 -eq "1" ]; then
   sh ~/.screenlayout/withoutTV.sh
   bspc monitor LVDS1 -d 1 2 3 4 5 6 7 8
   bspc monitor HDMI1 -d 9 10
-  feh --bg-fill --randomize ~/.config/background/*
   sh ~/.config/polybar/launch.sh &
   sh ~/.config/scripts/pywal.sh &
   sh ~/.config/scripts/physlock.sh &
@@ -20,16 +19,14 @@ else
     sleep 1
     bspc monitor LVDS1 -d 1 2 3 4 5 6 7 8
     bspc monitor HDMI1 -d 9 10
-    feh --bg-fill --randomize ~/.config/background/*
-    sh ~/.config/scripts/pywal.sh &
     notify-send "Screen" "Second screen added..."
   else
     sh ~/.screenlayout/withoutTV.sh
     sleep 1
     bspc monitor LVDS1 -d 1 2 3 4 5 6 7 8
     bspc monitor HDMI1 -d 9 10
-    feh --bg-fill --randomize ~/.config/background/*
-    sh ~/.config/scripts/pywal.sh &
     notify-send "Screen" "Second screen removed..."
   fi
+    sh ~/.config/scripts/pywal.sh &
+    sh ~/.config/scripts/polybar_toggle.sh &
 fi
