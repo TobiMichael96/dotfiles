@@ -28,5 +28,4 @@ else
     notify-send "Screen" "Second screen removed..."
   fi
     sh ~/.config/scripts/pywal.sh &
-    sh ~/.config/scripts/polybar_toggle.sh &
 fi

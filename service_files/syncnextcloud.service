@@ -1,7 +1,7 @@
 [Unit]
 Description=Sync nextcloud folder
 BindTo=wpa_supplicant@wlp3s0.service
-After=wpa_supplicant@wlp3s0.service
+After=resume.target
 
 [Service]
 User=tobias

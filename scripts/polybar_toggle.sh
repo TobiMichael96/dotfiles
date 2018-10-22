@@ -6,11 +6,6 @@ barheight=$(cat .config/polybar/config | grep height | head -n1 | sed 's/height.
 let height=$height-$barheight
 
 daemon() {
-	if [ pgrep -f polybar_toggle ]; then
-		pkill -f polybar_toggle
-		while pgrep -x polybar_toggle >/dev/null; do sleep 1; done
-	fi
-
 	while true; do
 		mousey=$(xdotool getmouselocation --shell | grep Y | sed 's/.=*//')
 		mousex=$(xdotool getmouselocation --shell | grep X | sed 's/.=*//')

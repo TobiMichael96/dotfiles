@@ -11,8 +11,8 @@ wait_for_connection() {
     	if response=$(ping -c 1 1.1.1.1 2> /dev/null); then
 	    upload_copy_url
     	else
-	    notify-send "Screenshot (try: $i)" "No connection avaliable, retry in 30 seconds!"
-	    sleep 30
+	    notify-send "Screenshot (retry: $i)" "No connection avaliable, retry in 30 seconds!"
+	    sleep 3
     	fi
     done
     save_local
@@ -28,9 +28,9 @@ save_local() {
     echo "No connection avaliable... Screenshot saved offline."
     date=$(date +"%d_%m_%Y")
     name=Screenshot-$date
-    if [ -e $name.png ] ; then
+    if [ -f ~/Pictures/Screenshots/$name.png ] ; then
       i=1
-      while [ -e $name-$i.png ] ; do
+      while [ -f ~/Pictures/Screenshots/$name-$i.png ] ; do
         i=$((i+1))
       done
       name=$name-$i.png
@@ -38,7 +38,7 @@ save_local() {
       name=$name.png
     fi
 
-    mv $IMAGE ~/Pictures/$name
+    mv $IMAGE ~/Pictures/Screenshots/$name
     notify-send "Screenshot" "Screenshot saved offline... $name"
 }
 
