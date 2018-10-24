@@ -1,7 +1,7 @@
 [Unit]
 Description=Sync nextcloud folder
 BindTo=wpa_supplicant@wlp3s0.service
-After=resume.target
+After=suspend.target
 
 [Service]
 User=tobias
@@ -10,5 +10,5 @@ ExecStartPre=/bin/sleep 10
 ExecStart=/bin/bash $HOME/.config/scripts/nextcloud_sync.sh
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=suspend.target
 
