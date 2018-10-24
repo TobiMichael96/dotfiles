@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
-TOKEN=$(cat ~/.imgurtoken)
-IMAGE=/tmp/screenshot.png
+if [[ -z $2 ]]; then
+	TOKEN=$(cat ~/.imgurtoken)
+else
+	TOKEN=$2
+fi
 
+IMAGE=/tmp/screenshot.png
 COUNTER=0
 
 wait_for_connection() {
@@ -43,12 +47,16 @@ save_local() {
 }
 
 case "$1" in
+  f)
+  scrot $IMAGE
+  wait_for_connection
+  ;;
   s)
   scrot -s $IMAGE
   wait_for_connection
   ;;
   help)
-  echo "Usage: $0 [ (full screenshot)|d (full screenshot with delay)|s (partial screenshot)|help]"
+  echo "Usage: $0 [f (full screenshot)|d (full screenshot with delay)|s (partial screenshot)|help] [(optional) IMGURTOKEN]"
   exit 0
   ;;
   d)
@@ -56,8 +64,8 @@ case "$1" in
   upload_copy_url
   ;;
   *)
-  scrot $IMAGE
-  wait_for_connection
+  echo "Usage: $0 [f (full screenshot)|d (full screenshot with delay)|s (partial screenshot)|help] [(optional) IMGURTOKEN]"
+  exit 0
   ;;
 esac
 

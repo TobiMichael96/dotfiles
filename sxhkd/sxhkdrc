@@ -129,7 +129,7 @@ XF86ScreenSaver
 	~/.config/scripts/screenshot-tool.sh s
 
 super + @Print
-	~/.config/scripts/screenshot-tool.sh
+	~/.config/scripts/screenshot-tool.sh f
 
 # Show information
 super + i
