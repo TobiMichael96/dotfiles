@@ -28,4 +28,5 @@ else
     notify-send "Screen" "Second screen removed..."
   fi
     sh ~/.config/scripts/pywal.sh &
+    sh ~/.config/scripts/hdmi_sound_toggle.sh
 fi

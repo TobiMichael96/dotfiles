@@ -4,7 +4,7 @@ Description=hdmi sound hotplug
 [Service]
 Type=simple
 RemainAfterExit=no
-ExecStart=/bin/bash $HOME/.config/scripts/hdmi_sound_toggle.sh
+ExecStart=/bin/bash /home/tobias/.config/scripts/hdmi_sound_toggle.sh
 
 [Install]
 WantedBy=multi-user.target
