@@ -136,7 +136,7 @@ label-foreground = ${colors.foreground}
 type = internal/bspwm
 
 label-focused = %name%
-label-focused-foreground = ${colors.foreground-alt}
+label-focused-foreground = ${colors.foreground}
 label-focused-underline= ${colors.foreground}
 label-focused-padding = 1
 
@@ -149,7 +149,7 @@ label-urgent-background = ${colors.urgent}
 label-urgent-padding = 1
 
 label-empty = %name%
-label-empty-foreground = ${colors.foreground}
+label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 1
 
 pin-workspaces = true

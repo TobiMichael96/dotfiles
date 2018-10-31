@@ -4,7 +4,7 @@
 #                  
 
 [global]
-    font = Roboto 12
+    font = Roboto 14
     markup = no
     format = "<b>%s</b>\n%b"
     sort = yes
@@ -29,7 +29,6 @@
     horizontal_padding = 16
     separator_color = auto
     startup_notification = false
-    dmenu = /usr/bin/dmenu -p dunst:
     browser = /usr/bin/chromium -new-tab
     icon_position = off
    

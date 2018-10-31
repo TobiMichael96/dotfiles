@@ -1,6 +1,9 @@
 xterm.termName: xterm-256color
 xterm.vt100.saveLines: 4096
 
+Xcursor.size: 38
+Xcursor.theme: Breeze_Default
+
 xterm.transparent: true
 xterm*faceName: Roboto Mono
 xterm*faceSize: 10
@@ -8,5 +11,3 @@ xterm*Background: #1f1f1f
 xterm*Foreground: #FFFFFF
 
 Xft.dpi: 160
-
-Xcursor.size: 40

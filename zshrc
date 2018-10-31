@@ -39,7 +39,6 @@ alias note='sh ~/.config/scripts/notes.sh'
 alias pacman-clean='sudo pacman -Rns $(pacman -Qtdq)'
 alias webserver='ssh tobiasmichael.de -p 2222'
 
-
 (cat ~/.cache/wal/sequences &)
 
 powerline-daemon -q
