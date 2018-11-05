@@ -14,9 +14,10 @@ wait_for_connection() {
     do
     	if response=$(ping -c 1 1.1.1.1 2> /dev/null); then
 	    upload_copy_url
+	    exit 0
     	else
 	    notify-send "Screenshot (retry: $i)" "No connection avaliable, retry in 30 seconds!"
-	    sleep 3
+	    sleep 30
     	fi
     done
     save_local
