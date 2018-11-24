@@ -39,7 +39,7 @@ super + m
 	bspc desktop -l next
 
 # set window fullscreen
-super + {f,gQ}
+super + {f,g}
 	bspc node -t {fullscreen,tiled}
 
 # set window fullscreen
@@ -54,24 +54,16 @@ super + {_,shift + } {1-9,0}
 super + {Left,Right}
 	bspc node --focus {prev,next}.local
 
-# swith desktop left or right
-super + shift + {Left,Right}
-	bspc desktop -f {prev,next}.local
-
 # go to next desktop
-super + Up
-	bspc desktop -f next.local
-
-# go to previous desktop
-super + Down
-	bspc desktop -f prev.local
+super + {Up,Down}
+	bspc desktop -f {next,prev}.local
 
 #
 # preselect
 #
 
 # preselect the direction
-super + ctrl + {Left,Down,Up,Right}
+super + shift + {Left,Down,Up,Right}
 	bspc node -p {west,south,north,east}
 
 # preselect the ratio
