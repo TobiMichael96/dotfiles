@@ -7,19 +7,19 @@ if [ $1 -eq "1" ]; then
   sh ~/.screenlayout/withoutTV.sh
   bspc monitor HDMI-A-1 -d 1 2 3 4 5 6
   bspc monitor DVI-D-0 -d 7 8 9 10
-  feh --bg-fill --no-xinerama --randomize ~/.config/background/*
   sh ~/.config/scripts/pywal.sh &
   sh ~/.config/polybar/launch.sh &
   sh /home/tobias/.config/scripts/physlock.sh &
   # other programms to autostart
   sleep 5
   keepassxc &
+  thunderbird &
+  firefox &
 
 else
   if ! [[ $used =~ ^[0-9]+$ ]]; then
     sh ~/.screenlayout/withTV.sh
     sleep 1
-    feh --bg-fill --randomize ~/.config/background/*
     sh ~/.config/scripts/pywal.sh
     bspc monitor HDMI-A-1 -d 1 2 3 4 5 6
     bspc monitor DVI-D-0 -d 7 8 9 10
@@ -29,7 +29,6 @@ else
   else
     sh ~/.screenlayout/withoutTV.sh
     sleep 1
-    feh --bg-fill --randomize ~/.config/background/*
     sh ~/.config/scripts/pywal.sh
     bspc monitor HDMI-A-1 -d 1 2 3 4 5 6
     bspc monitor DVI-D-0 -d 7 8 9 10

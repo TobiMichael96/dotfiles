@@ -9,6 +9,7 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
 	eval "$(<~/.ssh-agent-thing)"
 	ssh-add ~/.ssh/raspi
 	ssh-add ~/.ssh/gitlab
+	ssh-add ~/.ssh/amazon.pem
 fi
 
 alias px='ps ax | grep '

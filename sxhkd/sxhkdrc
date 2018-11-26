@@ -24,7 +24,7 @@ super + Escape
 
 # reload bspwm normally
 super + shift + r
-	~/.config/bspwm/bspwmrc
+	~/.config/scripts/pywal.sh
 
 # quit bspwm normally
 super + shift + e
