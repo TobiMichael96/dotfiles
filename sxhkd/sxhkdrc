@@ -22,7 +22,7 @@ super + Escape
 # bspwm hotkeys
 #
 
-# reload bspwm normally
+# reload theme
 super + shift + r
 	~/.config/scripts/pywal.sh
 
@@ -39,7 +39,7 @@ super + o
 	bspc desktop -l next
 
 # set window fullscreen
-super + {f,gQ}
+super + {f,g}
 	bspc node -t {fullscreen,tiled}
 
 # set window fullscreen
@@ -55,31 +55,23 @@ super + {Left,Right}
 	bspc node --focus {prev,next}.local
 
 # swith desktop left or right
-super + shift + {Left,Right}
+super + shift + {Down,Up}
 	bspc desktop -f {prev,next}.local
-
-# go to next desktop
-super + Up
-	bspc desktop -f next.local
-
-# go to previous desktop
-super + Down
-	bspc desktop -f prev.local
 
 #
 # preselect
 #
 
 # preselect the direction
-super + ctrl + {Left,Down,Up,Right}
+super + shift + {Left,Down,Up,Right}
 	bspc node -p {west,south,north,east}
 
 # preselect the ratio
-super + ctrl + {1-9}
+super + shift + {1-9}
 	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
-super + ctrl + Escape
+super + shift + Escape
 	bspc node -p cancel
 
 #

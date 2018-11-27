@@ -225,8 +225,3 @@ format = <label>
 type = custom/script
 format-foreground = ${colors.foreground-alt}
 exec = used=$(xrandr -q | grep "HDMI-A-0"); used=${used:19:4}; if [[ $used =~ ^[0-9]+$ ]]; then echo -n ""; fi;
-
-click-left = playerctl next
-click-right = playerctl play-pause next
-interval = 1
-format = <label>

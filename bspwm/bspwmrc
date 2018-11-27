@@ -19,7 +19,7 @@ bspc rule -a 'TeamSpeak 3' desktop='7'
 bspc rule -a Thunderbird desktop='8'
 bspc rule -a Atom desktop='9'
 
-sh /home/tobias/.screenlayout/checkscreens.sh 1 &
+~/.screenlayout/withoutTV.sh
 dunst &
 compton --config ~/.config/compton/compton.conf &
 numlockx &
@@ -27,6 +27,16 @@ setxkbmap de
 xsetroot -cursor_name left_ptr &
 xrdb merge .Xresources &
 wmname LG3D &
+~/.config/scripts/pywal.sh &
+~/.config/polybar/launch.sh &
+~/.config/scripts/physlock.sh &
+
+# other programms to autostart
+keepassxc &
+thunderbird &
+firefox &
+teamspeak3 &
+
 
 # source the colors.
 . "${HOME}/.cache/wal/colors.sh"
