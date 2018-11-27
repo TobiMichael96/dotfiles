@@ -3,7 +3,7 @@
 //----------------------
 
 configuration {
-font: 			"Roboto Mono 32";
+font: 			"Roboto Mono 40";
 show-match: 		true;
 separator-style: 	"solid";
 hide-scrollbar: 	true;
@@ -31,7 +31,7 @@ active-foreground:           rgba ( 128, 203, 196, 80 % );
 lightbg:                     rgba ( 238, 232, 213, 80 % );
 selected-active-foreground:  rgba ( 128, 203, 196, 80 % );
 alternate-active-background: rgba ( 39, 50, 56, 80 % );
-background:                  rgba ( 10, 10, 10, 90 % );
+background:                  rgba ( 10, 10, 10, 80 % );
 bordercolor:                 rgba ( 39, 50, 56, 80 % );
 alternate-normal-foreground: @foreground;
 normal-background:           rgba ( 39, 50, 56, 00 % );
@@ -76,7 +76,7 @@ spacing:      5px ;
 
 #element {
 border:  0;
-padding: 5px ;
+padding: 20px ;
 }
 
 #element.normal.normal {

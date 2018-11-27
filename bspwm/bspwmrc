@@ -23,6 +23,7 @@ xsetroot -cursor_name left_ptr
 xrdb merge ~/.Xresources &
 ~/.config/scripts/pywal.sh &   
 ~/.config/polybar/launch.sh &
+compton --config ~/.config/compton/compton.conf &
 sleep 3
 keepassxc &
 thunderbird &
