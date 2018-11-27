@@ -117,7 +117,7 @@ font-0 = "Roboto:pixelsize=14;2"
 font-1 = "FontAwesome:pixelsize=13;2"
 modules-left = bspwm
 modules-center = date
-modules-right = music pulseaudio time
+modules-right = pulseaudio time
 ;override-redirect = true
 wm-restack = bspwm
 scroll-up = bspwm-desknext
@@ -200,7 +200,7 @@ format-prefix = "  "
 time = "%H:%M"
 time-alt = %H:%M:%S
 format-prefix-foreground = ${colors.foreground-alt}
-label = %time%
+label = "%time%"
 
 [module/date]
 type = internal/date
@@ -209,25 +209,3 @@ format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
 date = "%d.%m.%Y"
 label = "%date%"
-
-[module/music]
-type = custom/script
-format-prefix = "  "
-format-prefix-foreground = ${colors.foreground-alt}
-exec = playerctl metadata xesam:title; if [[ "$(playerctl status)" = "Playing" ]]; then echo -n "    "; else echo -n "    "; fi; playerctl metadata xesam:artist;
-exec-if = [[ "$(playerctl status)" = "Playing" || "$(playerctl status)" = "Paused" ]] && echo "0"
-
-click-left = playerctl next
-click-right = playerctl play-pause next
-interval = 1
-format = <label>
-
-[module/tv]
-type = custom/script
-format-foreground = ${colors.foreground-alt}
-exec = used=$(xrandr -q | grep "HDMI-A-0"); used=${used:19:4}; if [[ $used =~ ^[0-9]+$ ]]; then echo -n ""; fi;
-
-click-left = playerctl next
-click-right = playerctl play-pause next
-interval = 1
-format = <label>
