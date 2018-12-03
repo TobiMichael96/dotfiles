@@ -10,4 +10,4 @@ xterm*faceSize: 10
 xterm*Background: #1f1f1f
 xterm*Foreground: #FFFFFF
 
-Xft.dpi: 160
+Xft.dpi: 164
