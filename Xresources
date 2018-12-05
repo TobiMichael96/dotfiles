@@ -10,6 +10,8 @@ xterm*Foreground: #FFFFFF
 Xcursor.size: 18
 Xcursor.theme: Breeze_Default
 
+Xft.dpi: 90
+
 ! special colors
 *.foreground:  #ABB2BF
 *.background:  #1E2127
