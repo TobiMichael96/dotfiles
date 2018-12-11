@@ -24,7 +24,7 @@ wait_for_connection() {
 }
 
 upload_copy_url() {
-    link=$(curl -H "Linx-Delete-Key: ${TOKEN}" -H "Linx-Api-Key: ${TOKEN}" -T ${IMAGE} https://api.tobiasmichael.de/linx/upload)
+    link=$(curl --compressed -fsSL -H "Linx-Delete-Key: ${TOKEN}" -H "Linx-Api-Key: ${TOKEN}" -T ${IMAGE} https://api.tobiasmichael.de/linx/upload)
     echo $link | xclip -selection c
     notify-send "Screenshot" "Link saved to clipboard! $link"
 }
