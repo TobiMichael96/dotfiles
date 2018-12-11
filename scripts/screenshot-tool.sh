@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 if [[ -z "$2" ]]; then
- TOKEN=$(cat ~/.imgurtoken)
+ TOKEN=$(cat ~/.linx)
 else
  TOKEN=$2
 fi
 
-IMAGE=/tmp/screenshot.png
+IMAGE=/tmp/screenshot.jpg
 COUNTER=0
 
 wait_for_connection() {
@@ -24,7 +24,7 @@ wait_for_connection() {
 }
 
 upload_copy_url() {
-    link=$(curl --compressed -fsSL -F "image=@\"${IMAGE}\"" -H "Authorization: Bearer ${TOKEN}" https://api.imgur.com/3/image | sed -E 's/.*"link":"([^"]+)".*/\1/' | sed "s|\\\\/|/|g")
+    link=$(curl -H "Linx-Delete-Key: ${TOKEN}" -H "Linx-Api-Key: ${TOKEN}" -T ${IMAGE} https://api.tobiasmichael.de/linx/upload)
     echo $link | xclip -selection c
     notify-send "Screenshot" "Link saved to clipboard! $link"
 }
@@ -33,14 +33,14 @@ save_local() {
     echo "No connection avaliable... Screenshot saved offline."
     date=$(date +"%d_%m_%Y")
     name=Screenshot-$date
-    if [ -f ~/Pictures/Screenshots/$name.png ] ; then
+    if [ -f ~/Pictures/Screenshots/$name.jpg ] ; then
       i=1
-      while [ -f ~/Pictures/Screenshots/$name-$i.png ] ; do
+      while [ -f ~/Pictures/Screenshots/$name-$i.jpg ] ; do
         i=$((i+1))
       done
-      name=$name-$i.png
+      name=$name-$i.jpg
     else
-      name=$name.png
+      name=$name.jpg
     fi
 
     mv $IMAGE ~/Pictures/Screenshots/$name
