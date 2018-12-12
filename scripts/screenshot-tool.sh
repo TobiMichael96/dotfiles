@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
 if [[ -z "$2" ]]; then
- TOKEN=$(cat ~/.linx)
+ TOKEN=$(cat ~/.seafile)
 else
  TOKEN=$2
 fi
 
-IMAGE=/tmp/screenshot.jpg
+date=$(date +"%d_%m_%Y")
+name=Screenshot-$date.png
+IMAGE=/tmp/$name
 COUNTER=0
 
 wait_for_connection() {
@@ -24,23 +26,21 @@ wait_for_connection() {
 }
 
 upload_copy_url() {
-    link=$(curl --compressed -fsSL -H "Linx-Delete-Key: ${TOKEN}" -H "Linx-Api-Key: ${TOKEN}" -T ${IMAGE} https://api.tobiasmichael.de/linx/upload)
+    link=$(curl -sS -H 'Authorization: Token ${TOKEN}' -F file=@${IMAGE} -F parent_dir=/Screenshots https://seafile.tobiasmichael.de/seafhttp/upload-api/c7325769-d59f-4b22-836e-76d693b24ff1)
     echo $link | xclip -selection c
     notify-send "Screenshot" "Link saved to clipboard! $link"
 }
 
 save_local() {
     echo "No connection avaliable... Screenshot saved offline."
-    date=$(date +"%d_%m_%Y")
-    name=Screenshot-$date
-    if [ -f ~/Pictures/Screenshots/$name.jpg ] ; then
+    if [ -f ~/Pictures/Screenshots/$name.png ] ; then
       i=1
-      while [ -f ~/Pictures/Screenshots/$name-$i.jpg ] ; do
+      while [ -f ~/Pictures/Screenshots/$name-$i.png ] ; do
         i=$((i+1))
       done
-      name=$name-$i.jpg
+      name=$name-$i.png
     else
-      name=$name.jpg
+      name=$name.png
     fi
 
     mv $IMAGE ~/Pictures/Screenshots/$name
@@ -57,7 +57,7 @@ case "$1" in
   wait_for_connection
   ;;
   help)
-  echo "Usage: $0 [f (full screenshot)|d (full screenshot with delay)|s (partial screenshot)|help] [(optional) IMGURTOKEN]"
+  echo "Usage: $0 [f (full screenshot)|d (full screenshot with delay)|s (partial screenshot)|help] [(optional) LinxAPI]"
   exit 0
   ;;
   d)
@@ -65,7 +65,7 @@ case "$1" in
   upload_copy_url
   ;;
   *)
-  echo "Usage: $0 [f (full screenshot)|d (full screenshot with delay)|s (partial screenshot)|help] [(optional) IMGURTOKEN]"
+  echo "Usage: $0 [f (full screenshot)|d (full screenshot with delay)|s (partial screenshot)|help] [(optional) LinxAPI]"
   exit 0
   ;;
 esac

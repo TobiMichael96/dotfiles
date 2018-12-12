@@ -13,6 +13,7 @@ bspc config automatic_scheme longest_side
 bspc rule -a Firefox desktop='1'
 bspc rule -a Thunderbird desktop='9'
 bspc rule -a keepassxc desktop='10'
+bspc rule -a KeeWeb desktop='10'
 
 ~/.config/scripts/physlock.sh &
 wmname LG3D
@@ -25,7 +26,8 @@ xrdb merge ~/.Xresources &
 ~/.config/polybar/launch.sh &
 compton --config ~/.config/compton/compton.conf &
 sleep 3
-keepassxc &
+#keepassxc &
+KeeWeb &
 thunderbird &
 firefox &
 

@@ -118,10 +118,10 @@ super + l
 
 # Screenshot
 @Print
-	~/.config/scripts/screenshot-tool.sh s
+	python ~/.config/screenshot.py
 
 super + @Print
-	~/.config/scripts/screenshot-tool.sh
+	python ~/.config/screenshot.py f
 
 # Show information
 super + i
