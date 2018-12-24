@@ -118,10 +118,10 @@ XF86ScreenSaver
 
 # Screenshot
 @Print
-	~/.config/scripts/screenshot-tool.sh s
+	~/.config/screenshot.py
 
 super + @Print
-	~/.config/scripts/screenshot-tool.sh f
+	~/.config/screenshot.py f
 
 # Show information
 super + i
