@@ -22,7 +22,7 @@ alias ls='ls --color=auto'
 alias httpd='hostname -i && python3 -m http.server 8001'
 alias note='sh ~/.config/scripts/notes.sh'
 alias pacman-clean='sudo pacman -Rns $(pacman -Qtdq)'
-alias webserver='ssh tobiasmichael.de -p 2222'
+alias webserver='mosh 192.168.2.4'
 alias ace='acestream-launcher -p vlc'
 
 (cat ~/.cache/wal/sequences &)
