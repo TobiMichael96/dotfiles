@@ -15,4 +15,4 @@ highlight=$color4
 
 polybar main &
 polybar secondary &
-polybar third &
+#polybar third &
