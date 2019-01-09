@@ -33,7 +33,7 @@ alias more=less
 
 alias px='ps ax | grep '
 alias cdc='cd $HOME/.config'
-alias screenshot='python ~/.config/screenshot.py'
+alias screenshot='sh ~/.config/scripts/screenshot-tool.sh s'
 alias httpd='hostname -i && python3 -m http.server 8001'
 alias note='sh ~/.config/scripts/notes.sh'
 alias pacman-clean='sudo pacman -Rns $(pacman -Qtdq)'

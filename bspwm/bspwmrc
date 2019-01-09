@@ -26,8 +26,8 @@ xrdb merge ~/.Xresources &
 ~/.config/polybar/launch.sh &
 compton --config ~/.config/compton/compton.conf &
 sleep 3
-#keepassxc &
-KeeWeb &
+keepassxc &
+#KeeWeb &
 thunderbird &
 firefox &
 

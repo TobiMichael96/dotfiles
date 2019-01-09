@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 if [[ -z "$2" ]]; then
- TOKEN=$(cat ~/.seafile)
+ PWD=$(cat ~/.uploader)
 else
- TOKEN=$2
+ PWD=$2
 fi
 
 date=$(date +"%d_%m_%Y")
-name=Screenshot-$date.png
+name=Screenshot-$date.jpg
 IMAGE=/tmp/$name
 COUNTER=0
 
@@ -26,9 +26,8 @@ wait_for_connection() {
 }
 
 upload_copy_url() {
-    link=$(curl -sS -H 'Authorization: Token ${TOKEN}' -F file=@${IMAGE} -F parent_dir=/Screenshots https://seafile.tobiasmichael.de/seafhttp/upload-api/c7325769-d59f-4b22-836e-76d693b24ff1)
-    echo $link | xclip -selection c
-    notify-send "Screenshot" "Link saved to clipboard! $link"
+    curl --user $USER:$PWD -F "file=@$IMAGE" https://api.tobiasmichael.de/uploader/ | xclip -sel clip
+    notify-send "Screenshot" "Link saved to clipboard!"
 }
 
 save_local() {
@@ -57,15 +56,15 @@ case "$1" in
   wait_for_connection
   ;;
   help)
-  echo "Usage: $0 [f (full screenshot)|d (full screenshot with delay)|s (partial screenshot)|help] [(optional) LinxAPI]"
+  echo "Usage: $0 [f (full screenshot)|d (full screenshot with delay)|s (partial screenshot)|help] [(optional) Password]"
   exit 0
   ;;
   d)
   scrot -d 3 $IMAGE
-  upload_copy_url
+  wait_for_connection
   ;;
   *)
-  echo "Usage: $0 [f (full screenshot)|d (full screenshot with delay)|s (partial screenshot)|help] [(optional) LinxAPI]"
+  echo "Usage: $0 [f (full screenshot)|d (full screenshot with delay)|s (partial screenshot)|help] [(optional) Password]"
   exit 0
   ;;
 esac
