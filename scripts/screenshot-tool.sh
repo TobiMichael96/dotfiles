@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ -z "$2" ]]; then
- PWD=$(cat ~/.uploader)
+ PWD=$(cat ~/Nextcloud/Passwords/Daten/.uploader)
 else
  PWD=$2
 fi
