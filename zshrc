@@ -39,6 +39,9 @@ alias note='sh ~/.config/scripts/notes.sh'
 alias pacman-clean='sudo pacman -Rns $(pacman -Qtdq)'
 alias webserver='mosh 192.168.2.4'
 
+alias stickm='sh ~/.config/scripts/mount-stick.sh' 
+alias stickum='sh ~/.config/scripts/umount-stick.sh'
+
 (cat ~/.cache/wal/sequences &)
 
 powerline-daemon -q
