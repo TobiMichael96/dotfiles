@@ -28,7 +28,7 @@ margin-bottom = 0
 monitor = LVDS1
 width = 100%
 bottom = true
-height = 24
+height = 20
 offset-x = 0%
 offset-y = 0%
 radius = 0.0
@@ -46,7 +46,7 @@ padding-bottom = 2
 module-margin-left = 2
 module-margin-right = 2
 enable-ipc = true
-font-0 = "DejaVu Sans:pixelsize=14;3"
+font-0 = "DejaVu Sans:pixelsize=12;3"
 font-1 = "FontAwesome:pixelsize=13;3"
 modules-left = bspwm tv wifi
 modules-center = date
