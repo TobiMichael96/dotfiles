@@ -36,7 +36,7 @@ keepassxc &
 thunderbird &
 firefox &
 teamspeak3 &
-
+steam &
 
 # source the colors.
 . "${HOME}/.cache/wal/colors.sh"
