@@ -48,9 +48,9 @@ module-margin-right = 2
 enable-ipc = true
 font-0 = "DejaVu Sans:pixelsize=12;3"
 font-1 = "FontAwesome:pixelsize=13;3"
-modules-left = bspwm tv wifi
+modules-left = bspwm wifi tv
 modules-center = date
-modules-right = music battery backlight pulseaudio time
+modules-right = stick music battery backlight pulseaudio time
 ;override-redirect = true
 wm-restack = bspwm
 scroll-up = bspwm-desknext
@@ -211,9 +211,9 @@ format = <label>
 [module/tv]
 type = custom/script
 format-foreground = ${colors.foreground-alt}
-exec = used=$(xrandr -q | grep "HDMI-A-0"); used=${used:19:4}; if [[ $used =~ ^[0-9]+$ ]]; then echo -n ""; fi;
+exec = if [[ ! -z $(xrandr -q | grep "HDMI1 connected" | cut -d ' ' -f3 | sed 's/[^0-9]*//g') ]]; then echo -n ""; fi;
 
-click-left = playerctl next
-click-right = playerctl play-pause next
-interval = 1
-format = <label>
+[module/stick]
+type = custom/script
+format-foreground = ${colors.foreground-alt}
+exec = if [[ ! -z $(df -aTh | grep "mapper/Stick") ]]; then echo -n ""; else echo -n " "; fi;

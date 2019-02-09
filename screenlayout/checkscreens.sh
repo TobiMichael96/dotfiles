@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-if [ $1 -eq "1" ]; then
+if [[ $1 -eq "1" ]]; then
   sleep 3
   sh ~/.screenlayout/withoutTV.sh
   bspc monitor LVDS1 -d 1 2 3 4 5 6 7 8
