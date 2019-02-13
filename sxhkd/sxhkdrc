@@ -28,11 +28,7 @@ super + p
 
 # reload themes
 super + shift + r
-  ~/.config/scripts/pywal.sh
-
-# quit bspwm normally
-super + shift + e
-	bspc quit
+  wal -i ~/.config/background
 
 # close
 super + shift + q
