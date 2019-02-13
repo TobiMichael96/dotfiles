@@ -5,7 +5,6 @@ if [[ $1 -eq "1" ]]; then
   bspc monitor LVDS1 -d 1 2 3 4 5 6 7 8
   bspc monitor HDMI1 -d 9 10
   sh ~/.config/polybar/launch.sh &
-  sh ~/.config/scripts/pywal.sh &
   sh ~/.config/scripts/physlock.sh &
   sh ~/.config/scripts/battery.sh &
   sh ~/.config/scripts/polybar_toggle.sh &
@@ -27,6 +26,5 @@ else
     bspc monitor HDMI1 -d 9 10
     notify-send "Screen" "Second screen removed..."
   fi
-    sh ~/.config/scripts/pywal.sh &
     sh ~/.config/scripts/hdmi_sound_toggle.sh
 fi
