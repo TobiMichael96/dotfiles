@@ -26,9 +26,9 @@ super + Escape
 super + shift + r
 	wal -i ~/.config/background
 
-# quit bspwm normally
-super + shift + e
-	bspc quit
+# show power menu
+super + p
+	~/.config/scripts/power_menu.sh
 
 # close
 super + shift + q
