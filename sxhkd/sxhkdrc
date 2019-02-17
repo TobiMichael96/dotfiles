@@ -88,7 +88,7 @@ super + alt + shift + {h,j,k,l}
 
 
 # check for other monitors
-super + p
+super + shift + p
 	~/.screenlayout/checkscreens.sh
 
 #
