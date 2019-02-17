@@ -1,5 +1,6 @@
+
 [commands.swipe.three]
-up = "rofi -modi window -show window -display-window 'Workspace: '"
-down = "rofi -modi drun -show drun -display-drun 'Programs: '"
+up = "rofi -modi drun -show drun -display-drun 'Programs: '"
+down = "sh ~/.config/scripts/power_menu.sh"
 left = "bspc desktop -f prev"
 right = "bspc desktop -f next"
