@@ -24,7 +24,7 @@ super + Escape
 
 # reload theme
 super + shift + r
-	~/.config/scripts/pywal.sh
+	wal -i ~/.config/background
 
 # quit bspwm normally
 super + shift + e
@@ -126,3 +126,8 @@ super + @Print
 # Show information
 super + i
 	~/.config/scripts/information.sh
+
+# Show keybindings
+super + F1
+    xterm -name xterm_keys_help -e ~/.config/sxhkd/show_help.sh
+

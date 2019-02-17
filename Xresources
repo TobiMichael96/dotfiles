@@ -7,6 +7,9 @@ xterm*faceSize: 10
 xterm*Background: #1f1f1f
 xterm*Foreground: #FFFFFF
 
+xterm*utf8: 2
+XTerm*utf8Title: true
+
 Xcursor.size: 18
 Xcursor.theme: Breeze_Default
 
