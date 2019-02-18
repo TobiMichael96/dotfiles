@@ -7,7 +7,7 @@ else
 fi
 
 date=$(date +"%d_%m_%Y")
-name=Screenshot-$date.jpg
+name=Screenshot-$date.png
 IMAGE=/tmp/$name
 COUNTER=0
 
