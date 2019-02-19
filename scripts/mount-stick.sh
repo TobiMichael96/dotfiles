@@ -1,4 +1,4 @@
-stick=0d87e841-f4ef-4b3e-87b1-c05e7fd02f0f
+stick=31df4720-2a20-4a51-b898-eeaad29522c6
 
 if (ls /dev/disk/by-uuid | grep "504d8a98-ab79-4aa8-9d6c-d7205c4a6cfe" > /dev/null); then
 	stick=504d8a98-ab79-4aa8-9d6c-d7205c4a6cfe
