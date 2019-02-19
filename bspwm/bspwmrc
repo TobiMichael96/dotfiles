@@ -41,9 +41,9 @@ wal -i ~/.config/background
 keepassxc &
 thunderbird &
 firefox &
-teamspeak3 &
 steam &
 spotify &
+teamspeak3 &
 
 # source the colors.
 . "${HOME}/.cache/wal/colors.sh"
