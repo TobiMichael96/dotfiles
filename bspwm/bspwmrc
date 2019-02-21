@@ -33,6 +33,10 @@ firefox &
 xset s 120
 xss-lock -- ~/.config/scripts/physlock.sh &
 
+# backup all installed packages
+pacman -Qqe | awk '{print $1}' > ~/.config/pacman_list.txt
+pacman -Qqem | awk '{print $1}' > ~/.config/aur_list.txt
+
 # source the colors.
 . "${HOME}/.cache/wal/colors.sh"
 
