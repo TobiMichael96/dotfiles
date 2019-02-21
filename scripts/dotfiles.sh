@@ -42,7 +42,6 @@ backup_files() {
         done
 
 	for fn in $(git ls-tree -d -r --name-only @); do
-		echo $fn
                 git add $fn
         done
 	
