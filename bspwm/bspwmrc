@@ -30,7 +30,7 @@ keepassxc &
 thunderbird &
 firefox &
 
-xset s 120
+xset s 300
 xss-lock -- ~/.config/scripts/physlock.sh &
 
 # source the colors.
