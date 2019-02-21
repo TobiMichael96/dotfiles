@@ -13,7 +13,7 @@ cd ~/.config
 
 ## declaring files
 declare -a files 
-files=( "~/.Xresources" "~/.xinitrc" "~/.zprofile" "~/.zshrc" "~/.bash_profile" "~/.bashrc" "~/.config/aur_list.txt" "~/.config/pacman_list.txt" ) 
+files=( ".Xresources" ".xinitrc" ".zprofile" ".zshrc" ".bash_profile" ".bashrc" ) 
 
 ## declaring folders
 declare -a folders
