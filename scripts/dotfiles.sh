@@ -24,13 +24,6 @@ read -p "Do you want to [b]ackup or [r]estore the files? " option
 
 ## restoring files
 restore_files() {
-	if [ ! -d .git ]; then
-        	echo "Git repository does not exist, cloning now..."
-	        git clone git@gitlab.com:tobimichael/dotfiles.git
-	else
-		echo "Git repository already exists..."
-	fi
-	
 	echo $(git branch -a)
 	read -p "What branch do you want to use? " option_branch
 

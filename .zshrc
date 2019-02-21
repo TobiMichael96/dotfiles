@@ -37,10 +37,10 @@ alias screenshot='sh ~/.config/scripts/screenshot-tool.sh s'
 alias httpd='hostname -i && python3 -m http.server 8001'
 alias note='sh ~/.config/scripts/notes.sh'
 alias pacman-clean='sudo pacman -Rns $(pacman -Qtdq)'
-alias webserver='ssh 192.168.2.4'
+alias dotfiles='sh ~/.config/scripts/dotfiles.sh'
 
+alias homeserver='ssh 192.168.2.4'
 alias homenet='sh ~/.config/scripts/wireguard.sh'
-
 alias stickm='sh ~/.config/scripts/mount-stick.sh' 
 alias stickum='sh ~/.config/scripts/umount-stick.sh'
 
