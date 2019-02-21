@@ -27,9 +27,11 @@ wal -i ~/.config/background
 compton --config ~/.config/compton/compton.conf &
 sleep 3
 keepassxc &
-#KeeWeb &
 thunderbird &
 firefox &
+
+xset s 120
+xss-lock -- ~/.config/scripts/physlock.sh &
 
 # source the colors.
 . "${HOME}/.cache/wal/colors.sh"
