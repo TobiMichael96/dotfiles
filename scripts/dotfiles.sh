@@ -56,8 +56,14 @@ backup_files() {
         done
 	
 	git add -u
-	git commit -m "Automatic update at $(date +"%c")."
-	git push
+
+	git update-index -q --refresh
+	CHANGED=$(git diff-index --name-only HEAD --)
+
+	if [ -n "$CHANGED" ]; then
+		git commit -m "Automatic update at $(date +"%c")."
+		git push
+	fi
 }
 
 ## checking for options
