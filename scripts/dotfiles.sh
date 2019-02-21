@@ -15,10 +15,6 @@ cd ~/.config
 declare -a files 
 files=( ".Xresources" ".xinitrc" ".zprofile" ".zshrc" ".bash_profile" ".bashrc" ) 
 
-## declaring folders
-declare -a folders
-folders=( "bspwm" "background" "dunst" "compton" "polybar" "rofi" "scripts" "sxhkd" )
-
 ## checking for input
 read -p "Do you want to [b]ackup or [r]estore the files? " option
 
@@ -45,7 +41,10 @@ backup_files() {
 		git add $fn
         done
 
-	for fn in ${folders[@]}; do
+	declare -a folder
+	folder = $(git ls-tree -d -r --name-only @)
+
+	for fn in ${folder[@]}; do
                 git add $fn
         done
 	
