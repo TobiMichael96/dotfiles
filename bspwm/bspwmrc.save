@@ -1,42 +1,37 @@
 #! /bin/sh
 
 bspc monitor HDMI-A-1 -d 1 2 3 4 5 6
-bspc monitor DVI-D-0 -d 7 8 9 10
-bspc monitor HDMI-A-0 -d 11
+bspc monitor DVI-D-0 -d 7 8
+bspc monitor HDMI-A-0 -d 9 10
 
 bspc config border_width         0
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      false
-bspc config single_monocle       false
+bspc config single_monocle       true
 bspc config initial_polarity second_child
-bspc config automatic_scheme longest_side
 
-bspc config external_rules_command ~/.config/bspwm/bspwm-rules
+bspc rule -a Chromium desktop='1'
+bspc rule -a Atom desktop='3'
+bspc rule -a Thunderbird desktop='4'
+bspc rule -a keepassxc desktop='5'
+bspc rule -a Steam desktop='6'
+bspc rule -a 'TeamSpeak 3' desktop='7'
 
-~/.screenlayout/withoutTV.sh
+sleep 5
+
+/home/tobias/.screenlayout/checkscreens.sh 1
+
+
 dunst &
+sxhkd &
 compton --config ~/.config/compton/compton.conf &
+keepassxc &
 numlockx &
 setxkbmap de
-xsetroot -cursor_name left_ptr &
-xrdb merge .Xresources &
-wmname LG3D &
-wal -i ~/.config/background
-~/.config/polybar/launch.sh &
-~/.config/scripts/physlock.sh &
-
-# other programms to autostart
-keepassxc &
-thunderbird &
-firefox &
-steam &
-spotify &
-teamspeak3 &
-
-xset s 120
-xss-lock -- ~/.config/scripts/physlock.sh &
+xsetroot -cursor_name left_ptr
+xrdb ~/.Xresources
 
 # source the colors.
 . "${HOME}/.cache/wal/colors.sh"
