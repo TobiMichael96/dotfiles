@@ -41,10 +41,8 @@ backup_files() {
 		git add $fn
         done
 
-	declare -a folder
-	folder = $(git ls-tree -d -r --name-only @)
-
 	for fn in $(git ls-tree -d -r --name-only @); do
+		echo $fn
                 git add $fn
         done
 	
