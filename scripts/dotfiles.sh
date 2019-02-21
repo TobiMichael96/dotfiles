@@ -62,8 +62,14 @@ backup_files() {
 	CHANGED=$(git diff-index --name-only HEAD --)
 
 	if [ -n "$CHANGED" ]; then
+		echo "Pushing changes now..."
 		git commit -m "Automatic update at $(date +"%c")."
 		git push
+		echo ""
+		echo ""
+		echo "Backup finished..."
+	else
+		echo "No changes to push to repository..."
 	fi
 }
 
