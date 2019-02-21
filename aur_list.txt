@@ -1,0 +1,14 @@
+android-studio
+aurman
+breeze-default-cursor-theme
+bspwm-git
+intellij-idea-ultimate-edition
+minecraft-launcher
+paper-icon-theme
+polybar-git
+proton
+spotify
+trizen
+ttf-font-awesome-4
+unified-remote-server
+yaourt
