@@ -23,7 +23,7 @@ folders=( "bspwm" "background" "dunst" "compton" "polybar" "rofi" "scripts" "sxh
 read -p "Do you want to [b]ackup or [r]estore the files? " option
 
 ## restoring files
-restore_fiels() {
+restore_files() {
 	if [ ! -d .git ]; then
         	echo "Git repository does not exist, cloning now..."
 	        git clone git@gitlab.com:tobimichael/dotfiles.git
@@ -45,13 +45,11 @@ restore_fiels() {
 ## backing files up
 backup_files() {
         for fn in ${files[@]}; do
-                echo $fn
                 rsync -r -u ~/$fn ~/.config/$fn
 		git add $fn
         done
 
 	for fn in ${folders[@]}; do
-                echo $fn
                 git add $fn
         done
 	
