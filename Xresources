@@ -1,3 +1,4 @@
+
 xterm.termName: xterm-256color
 xterm.vt100.saveLines: 4096
 
@@ -9,5 +10,28 @@ xterm*faceName: Roboto Mono
 xterm*faceSize: 10
 xterm*Background: #1f1f1f
 xterm*Foreground: #FFFFFF
+
+
+
+! URxvt
+URxvt*scrollBar: false
+
+
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+
+URxvt*transparent: true
+URxvt*shading: 20
+
+URxvt.font: xft:Iosevka:size=12
+URxvt.letterSpace: -1
+
+URxvt.internalBorder: 25
 
 Xft.dpi: 164
