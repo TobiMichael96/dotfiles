@@ -44,6 +44,9 @@ restore_files() {
 
 ## backing files up
 backup_files() {
+	pacman -Qqe | awk '{print $1}' > ~/.config/pacman_list.txt
+	pacman -Qqem | awk '{print $1}' > ~/.config/aur_list.txt
+
         for fn in ${files[@]}; do
                 rsync -r -u ~/$fn ~/.config/$fn
 		git add $fn
