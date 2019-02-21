@@ -27,6 +27,8 @@ restore_files() {
 	if [ ! -d .git ]; then
         	echo "Git repository does not exist, cloning now..."
 	        git clone git@gitlab.com:tobimichael/dotfiles.git
+	else
+		echo "Git repository already exists..."
 	fi
 	
 	echo $(git branch -a)
@@ -34,9 +36,7 @@ restore_files() {
 
 	git checkout $option_branch
 
-
 	for fn in ${files[@]}; do
-                echo $fn
                 rsync -r -u ~/.config/$fn ~/$fn
         done
 }
@@ -76,8 +76,11 @@ backup_files() {
 ## checking for options
 if [[ $option == "r" ]]; then
 	echo "Restoring files now..."
+	sleep 3
+	restore_files
 elif [[ $option == "b" ]]; then
 	echo "Backing up files now..."
+	sleep 3
 	backup_files
 else
 	echo "Invalid option. Exiting now..."
