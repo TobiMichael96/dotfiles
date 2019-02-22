@@ -25,7 +25,7 @@ restore_files() {
 
 ## backing files up
 backup_files() {
-	pacman -Qqent | awk '{print $1}' > ~/.config/pacman_list.txt
+	pacman -Qqen | awk '{print $1}' > ~/.config/pacman_list.txt
 	pacman -Qqem | awk '{print $1}' > ~/.config/aur_list.txt
 
 	cd ~/.config
