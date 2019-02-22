@@ -4,3 +4,6 @@
 [submodule "desktop"]
 	path = desktop
 	url = git@gitlab.com:tobimichael/dotfiles-desktop.git
+[submodule "laptop"]
+	path = laptop
+	url = git@gitlab.com:tobimichael/dotfiles-laptop.git
