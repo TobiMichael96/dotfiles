@@ -20,7 +20,7 @@ I recommend to install [trizen](https://github.com/trizen/trizen) too:
 2. `cd trizen`
 3. `makepkg -si`
 
-After that you can install all AUR packages. Just run `trizen -S - < ~/.config/aur_list.txt` to install those.
+After that you can install all AUR packages. Just run `trizen -S --needed - < ~/.config/aur_list.txt` to install those.
 
 Now you are ready to feel the power that comes with a Unix system.
 

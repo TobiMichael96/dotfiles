@@ -4,6 +4,27 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 ## checking for input
 read -p "Do you want to [b]ackup or [r]estore the files? " option
 
+## install trizen and pacman packages
+install_everything() {
+	if pacman -Qs trizen > /dev/null; then
+		echo "Trizen already installed, skipping..."
+	else
+		cd /tmp
+		git clone https://aur.archlinux.org/trizen.git
+		cd trizen
+		makepkg -si
+		echo "Trizen installed..."
+	fi
+	
+	sudo pacman -S --needed - < ~/.config/pacman_list.txt
+	trizen -S --needed - < ~/.config/aur_list.txt
+	
+	echo ""
+	echo "Everything is installed now..."
+	echo "Enjoy..."
+}
+
+
 ## restoring files
 restore_files() {
 	read -p "What dotfiles do you want to use? [laptop/desktop/work] " option
@@ -15,11 +36,22 @@ restore_files() {
 	fi	
 
 	for fn in $(ls -ap $DIR/$option | grep -v / | grep -v ".git" | grep -v "README.md" | grep -v ".txt"); do
-		ln -s $DIR/$option/$fn ~/$fn
+		if [ ! -f ~/$fn ]; then
+			ln -s $DIR/$option/$fn ~/$fn
+		fi	
 	done
 
 	echo ""
 	echo "Restoring completed..."
+	
+	read -p "Do you want everything to be installed for you? [y/n] " option
+
+	if [[ $option == "y" ]]; then
+        	echo "Beginning to install now..."
+        	install_everything
+	else
+        	echo "Ok. Exiting now..."
+	fi
 }
 
 
