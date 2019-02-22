@@ -73,7 +73,7 @@ backup_files() {
 	git add -u
 
         git update-index -q --refresh
-        CHANGED=$(git diff-index --name-only HEAD --)
+        CHANGED=$(git status | grep "nothing to" )
 	if [ -n "$CHANGED" ]; then
                 git commit -m "Automatic update in submodule at $(date +"%c")."
                 git push
@@ -88,8 +88,8 @@ backup_files() {
 	git add $(cat submodule.txt)
 
 	git update-index -q --refresh
-	CHANGED=$(git diff-index --name-only HEAD --)
-	if [ -n "$CHANGED" ]; then
+	CHANGED=$(git status | grep "nothing to" )
+	if [ ! "$CHANGED" ]; then
 		echo "Pushing changes now..."
 		git commit -m "Automatic update at $(date +"%c")."
 		git push
