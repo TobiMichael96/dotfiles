@@ -60,6 +60,7 @@ backup_files() {
 	pacman -Qqen | awk '{print $1}' > ~/.config/pacman_list.txt
 	pacman -Qqem | awk '{print $1}' > ~/.config/aur_list.txt
 
+	cd ~/dotfiles
 	git pull >/dev/null
 	git submodule update --recursive --remote
 
