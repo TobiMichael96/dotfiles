@@ -1,3 +1,6 @@
 [submodule "work"]
 	path = work
 	url = git@gitlab.com:tobimichael/dotfiles-work.git
+[submodule "desktop"]
+	path = desktop
+	url = git@gitlab.com:tobimichael/dotfiles-desktop.git
