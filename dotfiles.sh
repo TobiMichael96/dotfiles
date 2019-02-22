@@ -15,10 +15,10 @@ install_everything() {
 		makepkg -si
 		echo "Trizen installed..."
 	fi
-	
+
 	sudo pacman -S --needed - < ~/.config/pacman_list.txt
 	trizen -S --needed - < ~/.config/aur_list.txt
-	
+
 	echo ""
 	echo "Everything is installed now..."
 	echo "Enjoy..."
@@ -28,22 +28,22 @@ install_everything() {
 ## restoring files
 restore_files() {
 	read -p "What dotfiles do you want to use? [laptop/desktop/work] " option
-	
+
 	echo $option > submodule.txt
 
 	if [ ! -d ~/.config ]; then
         	ln -s $DIR/$option ~/.config
-	fi	
+	fi
 
 	for fn in $(ls -ap $DIR/$option | grep -v / | grep -v ".git" | grep -v "README.md" | grep -v ".txt"); do
 		if [ ! -f ~/$fn ]; then
 			ln -s $DIR/$option/$fn ~/$fn
-		fi	
+		fi
 	done
 
 	echo ""
 	echo "Restoring completed..."
-	
+
 	read -p "Do you want everything to be installed for you? [y/n] " option
 
 	if [[ $option == "y" ]]; then
@@ -75,8 +75,8 @@ backup_files() {
         CHANGED=$(git diff-index --name-only HEAD --)
 	if [ -n "$CHANGED" ]; then
                 git commit -m "Automatic update in submodule at $(date +"%c")."
-                git push 
-	else 
+                git push
+	else
 		echo "No changes in submodule to push to repository..."
         fi
 
@@ -91,7 +91,7 @@ backup_files() {
 	if [ -n "$CHANGED" ]; then
 		echo "Pushing changes now..."
 		git commit -m "Automatic update at $(date +"%c")."
-		git push 
+		git push
 	else
 		echo "No changes to push to repository..."
 	fi
