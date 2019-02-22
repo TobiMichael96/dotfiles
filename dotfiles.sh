@@ -61,6 +61,7 @@ backup_files() {
 	pacman -Qqem | awk '{print $1}' > ~/.config/aur_list.txt
 
 	cd ~/.config
+	echo ""
 	echo "Updating submodule now..."
 	for fn in $(git ls-tree -d -r --name-only @); do
                 git add $fn
@@ -72,9 +73,12 @@ backup_files() {
 	if [ -n "$CHANGED" ]; then
                 git commit -m "Automatic update in submodule at $(date +"%c")."
                 git push
+	else 
+		echo "No changes in submodule to push to repository..."
         fi
 
 	cd ~/dotfiles
+	echo ""
 	echo "Updating dotfiles now..."
 	git add -u
 	git add $(cat submodule.txt)
@@ -85,11 +89,12 @@ backup_files() {
 		echo "Pushing changes now..."
 		git commit -m "Automatic update at $(date +"%c")."
 		git push
-		echo ""
-		echo "Backup finished..."
 	else
 		echo "No changes to push to repository..."
 	fi
+
+	echo ""
+	echo "Backup finished..."
 }
 
 ## checking for options
