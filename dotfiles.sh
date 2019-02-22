@@ -74,7 +74,7 @@ backup_files() {
 
         git update-index -q --refresh
         CHANGED=$(git status | grep "nothing to" )
-	if [ -n "$CHANGED" ]; then
+	if [ ! "$CHANGED" ]; then
                 git commit -m "Automatic update in submodule at $(date +"%c")."
                 git push
 	else
