@@ -61,6 +61,7 @@ backup_files() {
 	pacman -Qqem | awk '{print $1}' > ~/.config/aur_list.txt
 
 	git pull >/dev/null
+	git submodule update --recursive --remote >/dev/null
 
 	cd ~/.config
 	echo ""
