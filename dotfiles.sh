@@ -1,33 +1,16 @@
 # simple script to backup and restore (dot)files
-
-
-## check if .config exists, if not create it
-if [ ! -d ~/.config ]; then
-	echo ".config does not exist, creating now..."
-	mkdir ~/.config
-fi
-
-## entering .config
-cd ~/.config
-
-
-## declaring files
-declare -a files 
-files=( ".Xresources" ".xinitrc" ".zprofile" ".zshrc" ".bash_profile" ".bashrc" ) 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 ## checking for input
 read -p "Do you want to [b]ackup or [r]estore the files? " option
 
 ## restoring files
 restore_files() {
-	echo $(git branch -a)
-	read -p "What branch do you want to use? " option_branch
+	read -p "What dotfiles do you want to use? [laptop/desktop/work] " option
 
-	git checkout $option_branch
-
-	for fn in ${files[@]}; do
-                rsync -r -u ~/.config/$fn ~/$fn
-        done
+	echo $option > $DIR/submodule
+	
+        ln -s $DIR/$option $DIR/.config
 }
 
 
