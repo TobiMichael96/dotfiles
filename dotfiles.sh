@@ -74,7 +74,7 @@ backup_files() {
         CHANGED=$(git diff-index --name-only HEAD --)
 	if [ -n "$CHANGED" ]; then
                 git commit -m "Automatic update in submodule at $(date +"%c")."
-                git push >/dev/null
+                git push 
 	else 
 		echo "No changes in submodule to push to repository..."
         fi
@@ -90,7 +90,7 @@ backup_files() {
 	if [ -n "$CHANGED" ]; then
 		echo "Pushing changes now..."
 		git commit -m "Automatic update at $(date +"%c")."
-		git push >/dev/null
+		git push 
 	else
 		echo "No changes to push to repository..."
 	fi
