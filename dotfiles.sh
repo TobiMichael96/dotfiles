@@ -29,18 +29,26 @@ backup_files() {
 	pacman -Qqem | awk '{print $1}' > ~/.config/aur_list.txt
 
 	cd ~/.config
+	echo "Updating submodule now..."
 	for fn in $(git ls-tree -d -r --name-only @); do
                 git add $fn
         done
 	git add -u
 
+        git update-index -q --refresh
+        CHANGED=$(git diff-index --name-only HEAD --)
+	if [ -n "$CHANGED" ]; then
+                git commit -m "Automatic update in submodule at $(date +"%c")."
+                git push
+        fi
+
 	cd ~/dotfiles
+	echo "Updating dotfiles now..."
 	git add -u
 	git add $(cat submodule.txt)
 
 	git update-index -q --refresh
 	CHANGED=$(git diff-index --name-only HEAD --)
-
 	if [ -n "$CHANGED" ]; then
 		echo "Pushing changes now..."
 		git commit -m "Automatic update at $(date +"%c")."
