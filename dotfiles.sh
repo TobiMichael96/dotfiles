@@ -8,6 +8,8 @@ read -p "Do you want to [b]ackup or [r]estore the files? " option
 restore_files() {
 	read -p "What dotfiles do you want to use? [laptop/desktop/work] " option
 	
+	echo $option > submodule.txt
+
 	if [ ! -d ~/.config ]; then
         	ln -s $DIR/$option ~/.config
 	fi	
@@ -30,8 +32,11 @@ backup_files() {
 	for fn in $(git ls-tree -d -r --name-only @); do
                 git add $fn
         done
-	
 	git add -u
+
+	cd ~/dotfiles
+	git add -u
+	git add $(cat submodule.txt)
 
 	git update-index -q --refresh
 	CHANGED=$(git diff-index --name-only HEAD --)
