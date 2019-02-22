@@ -1,9 +1,12 @@
 [submodule "work"]
 	path = work
 	url = git@gitlab.com:tobimichael/dotfiles-work.git
+	ignore = all
 [submodule "desktop"]
 	path = desktop
 	url = git@gitlab.com:tobimichael/dotfiles-desktop.git
+	ignore = all
 [submodule "laptop"]
 	path = laptop
 	url = git@gitlab.com:tobimichael/dotfiles-laptop.git
+	ignore = all
