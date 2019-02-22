@@ -7,10 +7,17 @@ read -p "Do you want to [b]ackup or [r]estore the files? " option
 ## restoring files
 restore_files() {
 	read -p "What dotfiles do you want to use? [laptop/desktop/work] " option
-
-	echo $option > $DIR/submodule
 	
-        ln -s $DIR/$option $DIR/.config
+	if [ ! -d ~/.config ]; then
+        	ln -s $DIR/$option ~/.config
+	fi	
+
+	for fn in $(ls -ap $DIR/$option | grep -v / | grep -v ".git" | grep -v "README.md" | grep -v ".txt"); do
+		ln -s $DIR/$option/$fn ~/$fn
+	done
+
+	echo ""
+	echo "Restoring completed..."
 }
 
 
@@ -19,11 +26,7 @@ backup_files() {
 	pacman -Qqe | awk '{print $1}' > ~/.config/pacman_list.txt
 	pacman -Qqem | awk '{print $1}' > ~/.config/aur_list.txt
 
-        for fn in ${files[@]}; do
-                rsync -r -u ~/$fn ~/.config/$fn
-		git add $fn
-        done
-
+	cd ~/.config
 	for fn in $(git ls-tree -d -r --name-only @); do
                 git add $fn
         done
@@ -38,7 +41,6 @@ backup_files() {
 		git commit -m "Automatic update at $(date +"%c")."
 		git push
 		echo ""
-		echo ""
 		echo "Backup finished..."
 	else
 		echo "No changes to push to repository..."
@@ -48,11 +50,9 @@ backup_files() {
 ## checking for options
 if [[ $option == "r" ]]; then
 	echo "Restoring files now..."
-	sleep 3
 	restore_files
 elif [[ $option == "b" ]]; then
 	echo "Backing up files now..."
-	sleep 3
 	backup_files
 else
 	echo "Invalid option. Exiting now..."
