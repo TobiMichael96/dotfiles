@@ -97,6 +97,9 @@ backup_files() {
 		echo "No changes to push to repository..."
 	fi
 
+	git pull >/dev/null
+        git submodule update --recursive --remote
+
 	echo ""
 	echo "Backup finished..."
 }
