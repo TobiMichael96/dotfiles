@@ -41,6 +41,9 @@ restore_files() {
 		fi
 	done
 
+	cd ~/.config
+	git checkout master
+
 	echo ""
 	echo "Restoring completed..."
 
