@@ -6,7 +6,7 @@ MENU="$(echo " Lock| Logout| Reboot| Shutdown" | rofi -sep '|' -dmen
 
 case "$MENU" in
 	*Lock) sh ~/.config/scripts/physlock.sh ;;
-        *Logout) bspc quit ;;
+        *Logout) bspc quit && exit ;;
         *Reboot) systemctl reboot ;;
         *Shutdown) systemctl -i poweroff ;;
 esac
