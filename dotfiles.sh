@@ -29,7 +29,7 @@ install_everything() {
 restore_files() {
 	if [ ! -f ~/dotfiles/submodule.txt ]; then
 		read -p "What dotfiles do you want to use? [laptop/desktop/work] " option
-		echo $option > submodule.txt
+		echo $option > ~/dotfiles/submodule.txt
 	else
 		option=$(cat submodule.txt)
 	fi
