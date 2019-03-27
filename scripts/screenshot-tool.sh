@@ -32,7 +32,7 @@ upload_copy_url() {
 
 save_local() {
     echo "No connection avaliable... Screenshot saved offline."
-    if [ -f ~/Pictures/Screenshots/$name.png ] ; then
+    if [ -f ~/Pictures/Screenshots/$name ] ; then
       i=1
       while [ -f ~/Pictures/Screenshots/$name-$i.png ] ; do
         i=$((i+1))
