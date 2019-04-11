@@ -1,0 +1,5 @@
+# simple hook to add routes for live tv
+# move this file in /etc/
+
+ip route add 239.35.10.0/24 via 192.168.2.1
+ip route add 239.35.20.0/24 via 192.168.2.1
