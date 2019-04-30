@@ -31,7 +31,7 @@ restore_files() {
 		read -p "What dotfiles do you want to use? [laptop/desktop/work] " option
 		echo $option > ~/dotfiles/submodule.txt
 	else
-		option=$(cat submodule.txt)
+		option=$(cat ~/dotfiles/submodule.txt)
 	fi
 
 	if [ ! -d ~/.config ]; then
