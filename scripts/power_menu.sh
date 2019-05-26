@@ -7,7 +7,7 @@ MENU="$(echo " Lock| Logout| Reboot| Shutdown" | rofi -sep '|' -dmen
 
 
 case "$MENU" in
-	*Lock) sh ~/.config/scripts/physlock.sh ;;
+	*Lock) sh ~/dotfiles/scripts/lock.sh ;;
         *Logout) bspc quit && umount /home/tobias/Nextcloud && pkill -KILL -u $user ;;
         *Reboot) systemctl reboot ;;
         *Shutdown) systemctl -i poweroff ;;
