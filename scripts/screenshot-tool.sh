@@ -6,7 +6,7 @@ else
  PWD=$2
 fi
 
-date=$(date +"%d_%m_%Y")
+date=$(date +"%d_%m_%Y_%H:%M")
 name=Screenshot-$date.jpg
 IMAGE=/tmp/$name
 COUNTER=0
@@ -26,8 +26,13 @@ wait_for_connection() {
 }
 
 upload_copy_url() {
-    curl --user $USER:$PWD -F "file=@$IMAGE" https://api.tobiasmichael.de/uploader/ | xclip -sel clip
-    notify-send "Screenshot" "Link saved to clipboard!"
+    curl --user $USER:$PWD -F "file=@$IMAGE" https://api.tobiasmichael.de/uploader/ | xclip
+    if [[ $(xclip -o) == *"pic.tobiasmichael.de"*  ]]; then
+	xclip -o | xclip -sel clip
+	notify-send "Screenshot" "Link saved to clipboard!"
+    else
+	notify-send "Screenshot" "Failed to upload!"
+    fi
 }
 
 save_local() {

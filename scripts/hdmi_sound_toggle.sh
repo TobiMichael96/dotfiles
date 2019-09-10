@@ -25,7 +25,7 @@ PULSE_SERVER="unix:/run/user/"$USER_ID"/pulse/native"
 #sudo -u "$USER_NAME" pactl --server "$PULSE_SERVER" set-card-profile 0 output:$AUDIO_OUTPUT+input:analog-stereo
 
 if [[ ! -z $(xrandr -q | grep "HDMI1 connected" | cut -d ' ' -f3 | sed 's/[^0-9]*//g') ]]; then
-	pacmd set-default-sink alsa_output.pci-0000_00_1b.0.hdmi-stereo
+	pacmd set-default-sink HDMI
 else
 	pacmd set-default-sink Analog
 fi
