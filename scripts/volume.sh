@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-number=$(pactl list short sinks | grep "Analog" | sed -e 's,^\([0-9][0-9]*\)[^0-9].*,\1,')
+number=$(pactl list short sinks | grep "alsa_output.pci-0000_00_1b.0.analog-stereo" | sed -e 's,^\([0-9][0-9]*\)[^0-9].*,\1,')
 volume=$(pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(($number + 1)) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,' )
 mute=$(pactl list sinks | grep '^[[:space:]]Mute:' | head -n $(($number + 1)) | tail -n 1 | sed -e 's/^[ \t]*//')
 output="Volume: $volume%"

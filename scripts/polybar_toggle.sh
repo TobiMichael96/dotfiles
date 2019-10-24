@@ -13,7 +13,7 @@ daemon() {
 			bspc config bottom_padding $barheight
 			hidden=false
 		elif [ "$mouse" -lt "$height" ] && [ "$hidden" = false ]; then
-			sleep 3
+			sleep 2
 			polybar-msg cmd hide
 			bspc config bottom_padding 0
 			hidden=true
