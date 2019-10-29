@@ -1,0 +1,1 @@
+KERNEL=="card0", SUBSYSTEM=="drm", ACTION=="change", RUN+="/home/tobias/dotfiles/scripts/hdmi_suspend_toggle.sh"
