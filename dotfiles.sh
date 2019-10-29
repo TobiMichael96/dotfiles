@@ -38,6 +38,10 @@ restore_files() {
         	ln -s $DIR/$option ~/.config
 	fi
 
+	if [[ ! -d ~/.screenlayout && -d ~/.config/screenlayout ]]; then
+        	ln -s $DIR/$option/screenlayout ~/.screenlayout
+	fi
+
 	for fn in $(ls -ap $DIR/$option | grep -v / | grep -v ".git" | grep -v "README.md" | grep -v ".txt"); do
 		if [ ! -f ~/$fn ]; then
 			ln -s $DIR/$option/$fn ~/$fn
