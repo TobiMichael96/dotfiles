@@ -26,7 +26,7 @@ wait_for_connection() {
 }
 
 upload_copy_url() {
-    curl --user $USER:$PWD -F "file=@$IMAGE" https://api.tobiasmichael.de/uploader/ | xclip
+    curl --user $USER:$PWD -F "file=@$IMAGE" https://pic.tobiasmichael.de/uploader/ | xclip
     if [[ $(xclip -o) == *"pic.tobiasmichael.de"*  ]]; then
 	xclip -o | xclip -sel clip
 	notify-send "Screenshot" "Link saved to clipboard!"
