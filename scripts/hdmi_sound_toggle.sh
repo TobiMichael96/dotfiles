@@ -1,5 +1,4 @@
 #!/bin/bash
-
 USER_NAME=$(who | awk -v vt=tty$(fgconsole) '$0 ~ vt {print$1}')
 USER_ID=$(id -u "$USER_NAME")
 CARD_PATH="/sys/class/drm/card0/"
@@ -23,9 +22,3 @@ for OUTPUT in $(cd "$CARD_PATH" && echo card*); do
 done
 echo selecting output $AUDIO_OUTPUT
 sudo -u "$USER_NAME" pactl --server "$PULSE_SERVER" set-card-profile 0 output:$AUDIO_OUTPUT
-
-#if [[ ! -z $(xrandr -q | grep "HDMI1 connected" | cut -d ' ' -f3 | sed 's/[^0-9]*//g') ]]; then
-#	pacmd set-default-sink HDMI
-#else
-#	pacmd set-default-sink Analog
-#fi

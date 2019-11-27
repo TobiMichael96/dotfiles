@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 connected=$(cat /sys/class/drm/card0/card0-HDMI-A-1/status)
 if [ "$connected" == "connected" ]; then
         sed -i 's/HandleLidSwitch=.*/HandleLidSwitch=ignored/' /etc/systemd/logind.conf
