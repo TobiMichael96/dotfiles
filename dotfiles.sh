@@ -6,14 +6,14 @@ read -p "Do you want to [b]ackup or [r]estore the files? " option
 
 ## install trizen and pacman packages
 install_everything() {
-	if pacman -Qs trizen > /dev/null; then
-		echo "Trizen already installed, skipping..."
+	if pacman -Qs yay > /dev/null; then
+		echo "Yay already installed, skipping..."
 	else
 		cd /tmp
-		git clone https://aur.archlinux.org/trizen.git
-		cd trizen
+		git clone https://aur.archlinux.org/yay.git
+		cd yay
 		makepkg -si
-		echo "Trizen installed..."
+		echo "Yay installed..."
 	fi
 
 	sudo pacman -S --needed - < ~/.config/pacman_list.txt
