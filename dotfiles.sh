@@ -4,7 +4,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 ## checking for input
 read -p "Do you want to [b]ackup or [r]estore the files? " option
 
-## install trizen and pacman packages
+## install yay and pacman packages
 install_everything() {
 	if pacman -Qs yay > /dev/null; then
 		echo "Yay already installed, skipping..."
@@ -17,7 +17,7 @@ install_everything() {
 	fi
 
 	sudo pacman -S --needed - < ~/.config/pacman_list.txt
-	trizen -S --needed - < ~/.config/aur_list.txt
+	yay -S --needed - < ~/.config/aur_list.txt
 
 	echo ""
 	echo "Everything is installed now..."
