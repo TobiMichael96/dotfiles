@@ -14,7 +14,7 @@ COUNTER=0
 wait_for_connection() {
     for i in {1..5}
     do
-     if response=$(ping -c 1 1.1.1.1 2> /dev/null); then
+     if response=$(ping -c 1 pic.tobiasmichael.de 2> /dev/null); then
         upload_copy_url
 	exit 0
      else
