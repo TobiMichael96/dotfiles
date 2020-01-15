@@ -10,3 +10,6 @@
         path = x230
         url = git@gitlab.com:tobimichael/dotfiles-x230.git
         ignore = all
+[submodule "e495"]
+	path = e495
+	url = git@gitlab.com:tobimichael/dotfiles-e495.git

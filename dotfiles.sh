@@ -28,7 +28,10 @@ install_everything() {
 ## restoring files
 restore_files() {
 	if [ ! -f ~/dotfiles/submodule.txt ]; then
-		read -p "What dotfiles do you want to use? [laptop/desktop/work] " option
+		echo "Available submodules:"
+		cat ~/dotfiles/.gitmodules | grep "path =" | awk '{print $3}'
+		echo ""
+		read -p "What dotfiles do you want to use? [] " option
 		echo $option > ~/dotfiles/submodule.txt
 	else
 		option=$(cat ~/dotfiles/submodule.txt)
