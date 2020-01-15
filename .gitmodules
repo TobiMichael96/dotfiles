@@ -6,7 +6,7 @@
 	path = desktop
 	url = git@gitlab.com:tobimichael/dotfiles-desktop.git
 	ignore = all
-[submodule "laptop"]
-	path = laptop
-	url = git@gitlab.com:tobimichael/dotfiles-laptop.git
-	ignore = all
+[submodule "x230"]
+        path = x230
+        url = git@gitlab.com:tobimichael/dotfiles-x230.git
+        ignore = all
