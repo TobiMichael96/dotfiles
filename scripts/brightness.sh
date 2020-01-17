@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-brightness=$(xbacklight)
+brightness=$(light)
 brightness="Brightness: "$(printf "%.*f\n" 0 $brightness)%
 
 notify() {
