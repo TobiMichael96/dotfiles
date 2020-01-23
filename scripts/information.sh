@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 datetime=$(date "+%a, %d %b — %H:%M")
-battery=$(~/.config/scripts/battery.sh g)
+#battery=$(~/.config/scripts/battery.sh g)
+battery=$(acpi -b | awk '{print $4 " " $5}')
 brightness=$(~/.config/scripts/brightness.sh)
 volume=$(~/.config/scripts/volume.sh)
 wifi=$(~/.config/scripts/wifi.sh)
