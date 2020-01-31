@@ -9,7 +9,7 @@ MENU="$(echo "	Lock|	Logout|	Suspend|	Reboot|	Shutdown" | rofi -s
 case "$MENU" in
 	*Lock) sh ~/dotfiles/scripts/lock.sh ;;
         *Logout) bspc quit && umount /home/tobias/Nextcloud && pkill -KILL -u $user ;;
-	*Suspend) systemctl suspend ;;
+	*Suspend) if [ -f "/home/tobias/dotfiles/mqtt-client/server.txt" ]; then python /home/tobias/dotfiles/mqtt-client/mqtt-status.py off; fi && systemctl suspend ;;
         *Reboot) systemctl reboot ;;
         *Shutdown) systemctl -i poweroff ;;
 esac
