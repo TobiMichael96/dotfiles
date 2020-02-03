@@ -53,23 +53,27 @@ save_local() {
 
 case "$1" in
   f)
-  scrot $IMAGE
+  maim $IMAGE
   wait_for_connection
   ;;
   s)
-  scrot -s $IMAGE
+  maim -s $IMAGE
   wait_for_connection
   ;;
   help)
-  echo "Usage: $0 [f (full screenshot)|d (full screenshot with delay)|s (partial screenshot)|help] [(optional) Password]"
+  echo "Usage: $0 [f (full screenshot)|d (full screenshot with delay)|s (partial screenshot)|a (active window screenshot)|help] [(optional) Password]"
   exit 0
   ;;
+  a)
+  maim -i $(xdotool getactivewindow) $IMAGE
+  wait_for_connection
+  ;;
   d)
-  scrot -d 3 $IMAGE
+  maim -d 3 $IMAGE
   wait_for_connection
   ;;
   *)
-  echo "Usage: $0 [f (full screenshot)|d (full screenshot with delay)|s (partial screenshot)|help] [(optional) Password]"
+  echo "Usage: $0 [f (full screenshot)|d (full screenshot with delay)|s (partial screenshot)|a (active window screenshot)|help] [(optional) Password]"
   exit 0
   ;;
 esac
