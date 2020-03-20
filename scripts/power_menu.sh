@@ -2,8 +2,8 @@
 
 user=$(who)
 
-#MENU="$(rofi -sep '|' -dmenu -i -p 'System' -hide-scrollbar echo -e " Lock| Logout| Reboot")"
-MENU="$(echo "	Lock|	Logout|	Suspend|	Reboot|	Shutdown" | rofi -sep '|' -dmenu -i -p "System: ")"
+#MENU="$(rofi -theme window -sep '|' -dmenu -i -p 'System' -hide-scrollbar echo -e " Lock| Logout| Reboot")"
+MENU="$(echo "	Lock|	Logout|	Suspend|	Reboot|	Shutdown" | rofi -theme window -sep '|' -dmenu -i -p "System: ")"
 
 
 case "$MENU" in
