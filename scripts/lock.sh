@@ -2,4 +2,8 @@
 
 export DIPLAY=:0
 
-slock &
+export XSECURELOCK_NO_COMPOSITE=1
+export XSECURELOCK_SHOW_DATETIME=1
+
+
+xsecurelock &
