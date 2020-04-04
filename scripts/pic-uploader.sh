@@ -31,5 +31,5 @@ upload_copy_url() {
         notify-send "Screenshot" "Failed to upload!"
     fi
 }
-<1
+
 wait_for_connection
