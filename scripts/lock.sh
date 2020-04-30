@@ -7,3 +7,4 @@ export XSECURELOCK_SHOW_DATETIME=1
 
 
 xsecurelock &
+wal -i ~/dotfiles/background
