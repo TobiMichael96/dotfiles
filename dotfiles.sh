@@ -89,7 +89,7 @@ backup_files() {
         CHANGED=$(git status | grep "nothing to" )
 	if [ ! "$CHANGED" ]; then
                 git commit -m "Automatic update in submodule at $(date +"%c")."
-                git push origin master
+                git push origin HEAD:master
 	else
 		echo "No changes in submodule to push to repository..."
         fi
