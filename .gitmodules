@@ -1,15 +1,11 @@
 [submodule "work"]
 	path = work
-	url = git@gitlab.com:tobimichael/dotfiles-work.git
+	url = git@github.com/TobiMichael96/dotfiles-work.git
 	ignore = all
 [submodule "desktop"]
 	path = desktop
-	url = git@gitlab.com:tobimichael/dotfiles-desktop.git
+	url = git@github.com/TobiMichael96/dotfiles-desktop.git
 	ignore = all
-[submodule "x230"]
-        path = x230
-        url = git@gitlab.com:tobimichael/dotfiles-x230.git
-        ignore = all
 [submodule "e495"]
 	path = e495
-	url = git@gitlab.com:tobimichael/dotfiles-e495.git
+	url = git@github.com/TobiMichael96/dotfiles-e495.git
